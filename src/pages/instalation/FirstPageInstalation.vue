@@ -1,39 +1,72 @@
 <template>
+  <div @scroll="onScroll">
+  <nav class="nav">
+    <div class="logo">
+      <p>P</p>
+      <p>-System</p>
+    </div>
+    <div  @click="toogleMenu" class="btn11" :class="menuActive" data-menu="11">
+      <div class="icon-left"></div>
+      <div class="icon-right"></div>
+    </div>
+  </nav>
   <header>
-    <nav class="nav">
-      <div class="logo">
-        <p>P</p>
-        <p>-System</p>
-      </div>
-      <div @click="toogleMenu" class="btn11" :class="menuActive" data-menu="11">
-        <div class="icon-left"></div>
-        <div class="icon-right"></div>
-      </div>
-    </nav>
-    <div class="box-splide splide" data-splide='{"autoplay":"", "arrows":""}'>
+    <div
+      class="splide-offers splide"
+      data-splide='{"autoplay":"", "arrows":""}'
+    >
       <Splide
         :options="{ rewind: true }"
         aria-label="My Favorite Images"
         data-splide='{"autoplay":"true","arrows":""}'
       >
         <SplideSlide>
-          <div class="picture-slider" alt="Sample 1"></div>
+          <div class="picture-slider" alt="Sample 1">
+            <div class="shadow-text">
+              <p class="main-text text-focus-in"><span>M</span>onitoring</p>
+              <p class="text-focus-in">Zadbamy O Twoje Bezbieczeństwo</p>
+            </div>
+          </div>
         </SplideSlide>
         <SplideSlide>
-          <div class="picture-slider2" alt="Sample 1"></div>
+          <div class="picture-slider0" alt="Sample 1">
+            <div class="shadow-text">
+              <p class="main-text text-focus-in2">
+                <span class="blue">Smart</span> Home
+              </p>
+              <p class="text-focus-in2">Dom Będzie Twoim Przyjacielem</p>
+            </div>
+          </div>
+        </SplideSlide>
+        <SplideSlide>
+          <div class="picture-slider2" alt="Sample 1">
+            <div class="shadow-text">
+              <p class="main-text text-focus-in3">
+                <span class="blue">Foto</span>woltanika
+              </p>
+              <p class="text-focus-in3">Czysta Energia</p>
+            </div>
+          </div>
         </SplideSlide>
 
         <SplideSlide>
-          <img class="picture-slider" src="./img/circle.jpg" alt="Sample 2" />
+          <div class="picture-slider3" alt="Sample 2">
+            <div class="shadow-text">
+              <p class="main-text text-focus-in4">
+                <span class="blue">I</span>nstalacje
+              </p>
+              <p class="text-focus-in4">Wykonana Z Najwyższą Starannością</p>
+            </div>
+          </div>
         </SplideSlide>
       </Splide>
     </div>
   </header>
   <section class="aboutUs">
+    <h3>O Firmie</h3>
     <div class="box-aboutUs">
       <div class="boss-photo"><img src="./img/pawel.png" /></div>
       <div class="text-aboutUs">
-        <h3>O Firmie</h3>
         <p>
           Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem
           ipsumLorem ipsumLorem ipsum
@@ -41,21 +74,33 @@
         <h3 class="signature">Paweł Picheta</h3>
       </div>
     </div>
-    <div class="achive">
-      <h3 class="achive-title">Nasze Osiągnięcia</h3>
+    <!-- <observer @on-change="onChange"><div></div></observer> -->
+    <div  class="achive">
+      <h3 class="achive-title">Nasze Liczby</h3>
       <div class="line-1">
         <div class="circle-1">
           <p class="big-p">10</p>
           <p class="small-p">Lat</p>
           <p class="small-p">doświadczenia</p>
         </div>
-        <div class="circle-1">
-          <p class="big-p">500</p>
+        <div @click="playAnimation" class="circle-1">
+          <number
+            ref="number1"
+            :from="0"
+            :to="500"
+            animationPaused
+            :format="theFormat"
+            :duration="5"
+            :delay=".3"
+            easing="Power1.easeOut"
+            class="big-p"
+            >500</number
+          >
           <p class="small-p">nie wiem</p>
           <p class="small-p">cos tam</p>
         </div>
       </div>
-      <div class="line-1">
+      <div id="listen" class="line-1">
         <div class="circle-1">
           <p class="big-p">300</p>
           <p class="small-p">Ukończonych</p>
@@ -115,10 +160,12 @@
       </Splide>
     </div>
   </section>
+  </div>
 </template>
 <script>
 import '@splidejs/splide/dist/css/themes/splide-default.min.css';
 export default {
+  
   data() {
     return {
       menuActive: 'menu',
@@ -132,10 +179,80 @@ export default {
         this.menuActive = 'menu';
       }
     },
+    theFormat(number) {
+            return number.toFixed();
+        },
+        completed() {
+            console.log('Animation ends!');
+        },
+        playAnimation() {
+            this.$refs.number1.play()
+        },
+       
+        listenScroll() {
+      let myScroll = document.querySelector("#listen").getBoundingClientRect().top
+        ;
+        console.log(myScroll.toFixed())
+        if(parseInt(myScroll.toFixed())<450){
+        this.playAnimation()
+      }
+    },
   },
+  beforeMount() {
+    document.addEventListener("scroll", this.listenScroll);
+},
 };
 </script>
 <style scoped>
+.text-focus-in {
+  animation: text-focus-in 2s cubic-bezier(0.55, 0.285, 0.68, 0.53) forwards;
+}
+.text-focus-in2 {
+  animation: text-focus-in 7s cubic-bezier(0.55, 0.285, 0.68, 0.53) forwards;
+}
+.text-focus-in3 {
+  animation: text-focus-in 12s cubic-bezier(0.55, 0.285, 0.68, 0.53) forwards;
+}
+.text-focus-in4 {
+  animation: text-focus-in 17s cubic-bezier(0.55, 0.285, 0.68, 0.53) forwards;
+}
+@keyframes text-focus-in {
+  0% {
+    -webkit-filter: blur(12px);
+    filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-filter: blur(0px);
+    filter: blur(0px);
+    opacity: 1;
+  }
+}
+.main-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.main-text > span {
+  color: #1488cc;
+  font-size: 2.3rem;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
+}
+.shadow-text {
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+.shadow-text > p {
+  color: white;
+  font-weight: bold;
+  font-size: 1.3rem;
+  padding-bottom: 2em;
+}
 .splide-offers {
 }
 .offers-title {
@@ -153,6 +270,7 @@ export default {
   margin: 1em 0;
 }
 .big-p {
+  text-align: center;
   padding-bottom: 0.1em;
   font-weight: bold;
   font-size: 2rem;
@@ -197,8 +315,8 @@ export default {
   font-family: 'Sacramento';
   font-size: 1.6rem;
   position: relative;
-  left: -100px;
-  top: -30px;
+  left: 0px;
+  top: 0px;
 }
 .box-splide {
   display: flex;
@@ -207,7 +325,10 @@ export default {
 }
 
 .picture-slider,
-.picture-slider2 {
+.picture-slider2,
+.picture-slider3,
+.picture-slider0 {
+  position: relative;
   width: 100%;
   height: 200px;
   background-image: url('./img/kable.jpg');
@@ -236,6 +357,12 @@ export default {
 .picture-slider2 {
   background-image: url('./img/solar.png');
 }
+.picture-slider {
+  background-image: url('./img/circle.jpg');
+}
+.picture-slider0 {
+  background-image: url('./img/smarthome.jpg');
+}
 .offer-slider4 {
   background-image: url('./img/satelity.jpg');
 }
@@ -244,10 +371,12 @@ export default {
 }
 
 .nav {
-  position: relative;
+  position: sticky;
+  top: 0;
   display: flex;
   background-color: white;
   height: 50px;
+  z-index: 1000;
 }
 .splide__arrow {
   opacity: 0;
@@ -267,7 +396,11 @@ p {
   font-weight: bold;
   color: blue;
 }
+.aboutUs > h3 {
+  text-align: center;
+}
 .box-aboutUs {
+  position: relative;
   display: flex;
   justify-content: end;
 }
@@ -285,7 +418,9 @@ p {
   box-shadow: 3px 3px 10px rgba(46, 46, 46, 0.18);
 }
 .boss-photo {
-  position: relative;
+  position: absolute;
+  top: 30%;
+  left: 10%;
 }
 .achive {
   padding-bottom: 2em;

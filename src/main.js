@@ -10,11 +10,13 @@ library.add(far);
 import { dom } from "@fortawesome/fontawesome-svg-core";
 dom.watch();
 import VueSplide from '@splidejs/vue-splide';
-
+import VueNumber from 'vue-number-animation';
+// import Observer from 'vue-intersection-observer';
 import router from './router.js';
 import App from './App.vue';
 const app = createApp(App)
-
+app.use(VueNumber);
+// app.use(Observer);
 app.use(router);
 app.use( VueSplide );
 app.mount('#app');
