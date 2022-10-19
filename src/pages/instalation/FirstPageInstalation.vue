@@ -332,7 +332,7 @@ export default {
   width: 100%;
   height: 200px;
   background-image: url('./img/kable.jpg');
-  background-attachment: fixed;
+  background-attachment: scroll;
   background-size: cover;
   background-position: center;
 }
@@ -344,7 +344,7 @@ export default {
   width: 100%;
   height: 100px;
   background-image: url('./img/camera.jpg');
-  background-attachment: fixed;
+  background-attachment: scroll;
   background-size: cover;
   background-position: center;
 }
