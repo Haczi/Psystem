@@ -70,94 +70,105 @@
       </div>
     </header>
     <section class="aboutUs">
-      <h3>O Firmie</h3>
-      <div class="box-aboutUs">
-        <div class="boss-photo"><img src="./img/pawel.png" /></div>
-        <div class="text-aboutUs">
-          <p>
-            Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem
-            ipsumLorem ipsumLorem ipsum
-          </p>
-          <h3 class="signature">Paweł Picheta</h3>
+      <figure class="snip1401">
+        <img src="./img/whitecamera.jpg" alt="sample67" />
+
+        <figcaption>
+          <h3>O Nas</h3>
+          <p>Cos madrego i krotkiego o firmie</p>
+        </figcaption>
+        
+      </figure>
+      <div class="cont-box">
+        <div class="box">
+          <div class="title">
+            <span class="block1"></span>
+            <h1>P-System<span></span></h1>
+          </div>
+
+          <div class="role">
+            <div class="block"></div>
+            <p>Zaufaj Nam</p>
+          </div>
         </div>
       </div>
-      <!-- <observer @on-change="onChange"><div></div></observer> -->
+
       <div class="achive">
         <h3 class="achive-title">Nasze Liczby</h3>
         <div class="line-1">
-        <div class="circle">
-          <div class="circle-1">
-            <number
-              ref="number2"
-              :from="0"
-              :to="10"
-              animationPaused
-              :format="theFormat"
-              :duration="5"
-              :delay="0.3"
-              easing="Power1.easeOut"
-              class="big-p"
-              >10</number
-            >
-            <p class="small-p">Lat</p>
-            <p class="small-p">doświadczenia</p>
+          <div class="circle">
+            <div class="circle-1">
+              <number
+                ref="number2"
+                :from="0"
+                :to="10"
+                animationPaused
+                :format="theFormat"
+                :duration="5"
+                :delay="0.3"
+                easing="Power1.easeOut"
+                class="big-p"
+                >10</number
+              >
+              <p class="small-p">Lat</p>
+              <p class="small-p">doświadczenia</p>
+            </div>
           </div>
-        </div>
-        <div class="circle">
-          <div class="circle-1">
-            <number
-              ref="number1"
-              :from="0"
-              :to="500"
-              animationPaused
-              :format="theFormat"
-              :duration="5"
-              :delay="0.3"
-              easing="Power1.easeOut"
-              class="big-p"
-              >500</number
-            >
-            <p class="small-p">nie wiem</p>
-            <p class="small-p">cos tam</p>
+          <div class="circle">
+            <div class="circle-1">
+              <number
+                ref="number1"
+                :from="0"
+                :to="500"
+                animationPaused
+                :format="theFormat"
+                :duration="5"
+                :delay="0.3"
+                easing="Power1.easeOut"
+                class="big-p"
+                >500</number
+              >
+              <p class="small-p">nie wiem</p>
+              <p class="small-p">cos tam</p>
+            </div>
           </div>
-        </div>
         </div>
         <div id="listen" class="line-1">
           <div class="circle">
-          <div class="circle-1">
-            <number
-              ref="number3"
-              :from="0"
-              :to="300"
-              animationPaused
-              :format="theFormat"
-              :duration="5"
-              :delay="0.3"
-              easing="Power1.easeOut"
-              class="big-p"
-              >300</number
-            >
-            <p class="small-p">Ukończonych</p>
-            <p class="small-p">projektów</p>
-          </div>
+            <div class="circle-1">
+              <number
+                ref="number3"
+                :from="0"
+                :to="300"
+                animationPaused
+                :format="theFormat"
+                :duration="5"
+                :delay="0.3"
+                easing="Power1.easeOut"
+                class="big-p"
+                >300</number
+              >
+              <p class="small-p">Ukończonych</p>
+              <p class="small-p">projektów</p>
+            </div>
           </div>
           <div class="circle">
-          <div class="circle-1">
-            <number
-              ref="number4"
-              :from="0"
-              :to="1000"
-              animationPaused
-              :format="theFormat"
-              :duration="5"
-              :delay="0.3"
-              easing="Power1.easeOut"
-              class="big-p"
-              >1000+</number
-            >
-            <p class="small-p">Zadowolonych</p>
-            <p class="small-p">klientów</p>
-          </div>
+            <div class="circle-1">
+              <number
+                ref="number4"
+                :from="0"
+                :to="1000"
+                animationPaused
+                :format="theFormat"
+                :duration="5"
+                :delay="0.3"
+                easing="Power1.easeOut"
+                class="big-p"
+                >1000+</number
+              >
+              <p class="small-p">Zadowolonych</p>
+              <p class="small-p">klientów</p>
+            </div>
           </div>
         </div>
       </div>
@@ -177,32 +188,28 @@
             <div class="card-box">
               <div class="offer-slider1" alt="Sample 1"></div>
               <h4>Instalacje</h4>
-              <div class="offer-btn"><p>Oferta</p>
-              </div>
+              <div class="offer-btn"><p>Oferta</p></div>
             </div>
           </SplideSlide>
           <SplideSlide>
             <div class="card-box">
               <div class="offer-slider2" alt="Sample 1"></div>
               <h4>Zabezpieczenia</h4>
-              <div class="offer-btn"><p>Oferta</p>
-              </div>
+              <div class="offer-btn"><p>Oferta</p></div>
             </div>
           </SplideSlide>
           <SplideSlide>
             <div class="card-box">
               <div class="offer-slider3" alt="Sample 1"></div>
               <h4>Monitoring</h4>
-              <div class="offer-btn"><p>Oferta</p>
-              </div>
+              <div class="offer-btn"><p>Oferta</p></div>
             </div>
           </SplideSlide>
           <SplideSlide>
             <div class="card-box">
               <div class="offer-slider4" alt="Sample 1"></div>
               <h4>Satelity/TV</h4>
-              <div class="offer-btn"><p>Oferta</p>
-              </div>
+              <div class="offer-btn"><p>Oferta</p></div>
             </div>
           </SplideSlide>
 
@@ -211,11 +218,45 @@
             <div class="card-box">
               <div class="offer-slider5" alt="Sample 1"></div>
               <h4>Swiatlowody/Internet</h4>
-              <div class="offer-btn"><p>Oferta</p>
-              </div>
+              <div class="offer-btn"><p>Oferta</p></div>
             </div>
           </SplideSlide>
         </Splide>
+      </div>
+    </section>
+    <section class="realisations">
+      <div class="box-realis">
+        <h3>Nasze Realizacje</h3>
+      <figure class="snip1482">
+        <figcaption>
+          <h2>Prywatny Dom</h2>
+          <p>Instalacja fotowoltaiki</p>
+        </figcaption>
+        <img
+          src="./img/solarpanel.jpg"
+          alt="sample45"
+        />
+      </figure>
+      <figure class="snip1482">
+        <figcaption>
+          <h2>Osiedle</h2>
+          <p>Monitoring</p>
+        </figcaption>
+        <img
+          src="./img/cctv.jpg"
+          alt="sample45"
+        />
+      </figure>
+      <figure class="snip1482">
+        <figcaption>
+          <h2>Magazyn</h2>
+          <p>Instalacja elektryczna oraz monitoring</p>
+        </figcaption>
+        <img
+          src="./img/hala.jpg"
+          alt="sample45"
+        />
+      </figure>
       </div>
     </section>
   </div>
@@ -227,7 +268,7 @@ export default {
     return {
       menuActive: 'menu',
       navActive: '',
-      linkActive:''
+      linkActive: '',
     };
   },
   methods: {
@@ -235,11 +276,11 @@ export default {
       if (this.menuActive === 'menu') {
         this.menuActive = 'open';
         this.navActive = 'nav-menu_active';
-        this.linkActive= 'menu-link_active';
+        this.linkActive = 'menu-link_active';
       } else {
         this.menuActive = 'menu';
         this.navActive = '';
-        this.linkActive='';
+        this.linkActive = '';
       }
     },
     theFormat(number) {
@@ -271,6 +312,392 @@ export default {
 };
 </script>
 <style scoped>
+.box-realis{
+  width:100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1em 0;
+}
+h3{
+  border-left: 6px solid #2779a7;
+  padding-left: 1em;
+}
+@keyframes mainBlock {
+  0% {
+    width: 0%;
+    left: 0;
+  }
+  50% {
+    width: 100%;
+    left: 0;
+  }
+  100% {
+    width: 0;
+    left: 100%;
+  }
+}
+
+@keyframes secBlock {
+  0% {
+    width: 0%;
+    left: 0;
+  }
+  50% {
+    width: 100%;
+    left: 0;
+  }
+  100% {
+    width: 0;
+    left: 100%;
+  }
+}
+
+@keyframes mainFadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes popIn {
+  0% {
+    width: 0px;
+    height: 0px;
+    background: #1488cc;
+    border: 0px solid #ddd;
+    opacity: 0;
+  }
+  50% {
+    width: 10px;
+    height: 10px;
+    background: #1488cc;
+    opacity: 1;
+    bottom: 45px;
+  }
+  65% {
+    width: 7px;
+    height: 7px;
+    bottom: 0px;
+    width: 15px;
+  }
+  80% {
+    width: 10px;
+    height: 10px;
+    bottom: 20px;
+  }
+  100% {
+    width: 7px;
+    height: 7px;
+    background: #1488cc;
+    border: 0px solid #222;
+    bottom: 13px;
+  }
+}
+
+@keyframes secFadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+.cont-box {
+  position: absolute;
+  top: 0;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+.box {
+  width: 250px;
+  height: 250px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  /* z-index: 1000; */
+}
+
+.title {
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 50px;
+}
+
+.block1 {
+  width: 0%;
+  border-radius: 10px;
+  height: inherit;
+  background: #1488cc;
+  position: absolute;
+  animation: mainBlock 2s cubic-bezier(0.74, 0.06, 0.4, 0.92) forwards;
+  display: flex;
+}
+
+.title > h1 {
+  font-family: 'Poppins';
+  color: black;
+  font-size: 32px;
+  -webkit-animation: mainFadeIn 2s forwards;
+  -o-animation: mainFadeIn 2s forwards;
+  animation: mainFadeIn 2s forwards;
+  animation-delay: 1.6s;
+  opacity: 0;
+  display: flex;
+  align-items: baseline;
+  position: relative;
+}
+
+.title > h1 > span {
+  width: 0px;
+  height: 0px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  color: #000000;
+  background: #1488cc;
+  -webkit-animation: load 0.6s cubic-bezier(0.74, 0.06, 0.4, 0.92) forwards;
+  animation: popIn 0.8s cubic-bezier(0.74, 0.06, 0.4, 0.92) forwards;
+  animation-delay: 2s;
+  margin-left: 5px;
+  margin-top: -10px;
+  position: absolute;
+  bottom: 13px;
+  right: -12px;
+}
+
+.role {
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 30px;
+  margin-top: -10px;
+}
+
+.block {
+  width: 0%;
+  height: inherit;
+  border-radius: 10px;
+  background: #9c9c9c;
+  position: absolute;
+  animation: secBlock 2s cubic-bezier(0.74, 0.06, 0.4, 0.92) forwards;
+  animation-delay: 2s;
+  display: flex;
+}
+
+.role > p {
+  animation: secFadeIn 2s forwards;
+  animation-delay: 3.2s;
+  opacity: 0;
+  font-weight: 400;
+  font-family: 'Lato';
+  color: #000000;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+}
+
+.snip1401 {
+  font-family: 'Playfair Display', Arial, sans-serif;
+  position: relative;
+  overflow: hidden;
+  /* margin: 10px; */
+  min-width: 230px;
+  max-width: 100%;
+  max-height: 220px;
+  width: 100%;
+  color: #000000;
+  text-align: right;
+  font-size: 16px;
+  background-color: #000000;
+  margin: 0;
+}
+.snip1401 * {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all 0.35s ease;
+  transition: all 0.35s ease;
+}
+.snip1401 img {
+  max-width: 100%;
+  backface-visibility: hidden;
+}
+.snip1401 figcaption {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 1;
+  opacity: 1;
+  padding: 30px 0 30px 10px;
+  background-color: #ffffff;
+  width: 40%;
+  -webkit-transform: translateX(150%);
+  transform: translateX(150%);
+}
+.snip1401 figcaption:before {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  right: 100%;
+  content: '';
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 120px 120px 120px 0;
+  border-color: transparent #ffffff transparent transparent;
+}
+.snip1401:after {
+  position: absolute;
+  bottom: 50%;
+  right: 40%;
+  content: '';
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 120px 120px 0 120px;
+  border-color: rgba(255, 255, 255, 0.5) transparent transparent transparent;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  -webkit-transition: all 0.35s ease;
+  transition: all 0.35s ease;
+}
+.snip1401 h3,
+.snip1401 p {
+  line-height: 1.5em;
+  -webkit-transform: translateX(-30px);
+  transform: translateX(-30px);
+  margin: 0;
+}
+.snip1401 h3 {
+  margin: 0 0 5px;
+  line-height: 1.1em;
+  font-weight: 900;
+  font-size: 1.4em;
+  opacity: 0.75;
+}
+.snip1401 p {
+  font-size: 0.8em;
+}
+.snip1401 i {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 20px 30px;
+  font-size: 44px;
+  color: #ffffff;
+  opacity: 0;
+}
+.snip1401 a {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
+.snip1401:hover img,
+.snip1401.hover img {
+  zoom: 1;
+  filter: alpha(opacity=50);
+  -webkit-opacity: 0.5;
+  opacity: 0.5;
+}
+.snip1401:hover:after,
+.snip1401.hover:after,
+.snip1401:hover figcaption,
+.snip1401.hover figcaption,
+.snip1401:hover i,
+.snip1401.hover i {
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+  opacity: 1;
+}
+.snip1482 {
+  font-family: 'Fauna One', Arial, sans-serif;
+  position: relative;
+  margin: 0;
+  min-width: 230px;
+  max-width: 295px;
+  min-height: 210px;
+  width: 100%;
+  color: #ffffff;
+  text-align: right;
+  line-height: 1.4em;
+  background-color: #1a1a1a;
+  font-size: 16px;
+  margin-bottom: 2em;
+}
+.snip1482 * {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all 0.35s ease;
+  transition: all 0.35s ease;
+}
+.snip1482 img {
+  position: absolute;
+  right: 0%;
+  top: 50%;
+  opacity: 1;
+  width: 100%;
+  -webkit-transform: translate(0%, -50%);
+  transform: translate(0%, -50%);
+}
+.snip1482 figcaption {
+  position: absolute;
+  width: 50%;
+  top: 50%;
+  left: 0;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  padding: 20px 0 20px 20px;
+}
+.snip1482 h2,
+.snip1482 p {
+  margin: 0;
+  width: 100%;
+  -webkit-transform: translateX(20px);
+  transform: translateX(20px);
+  opacity: 0;
+}
+.snip1482 h2 {
+  font-family: 'Playfair Display', Arial, sans-serif;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+.snip1482 p {
+  font-size: 0.8em;
+}
+.snip1482 a {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
+.snip1482:hover img,
+.snip1482.hover img {
+  width: 55%;
+  right: -10%;
+}
+.snip1482:hover figcaption h2,
+.snip1482.hover figcaption h2,
+.snip1482:hover figcaption p,
+.snip1482.hover figcaption p {
+  -webkit-transform: translateX(0px);
+  transform: translateX(0px);
+  opacity: 1;
+}
 .conteiner {
   position: relative;
   transition: all 1s;
@@ -378,7 +805,7 @@ export default {
 }
 .splide-offers {
 }
-.offers-title {
+.offers{
   text-align: center;
 }
 .card-box {
@@ -391,26 +818,25 @@ export default {
   overflow: hidden;
   margin-bottom: 1em;
 }
-.card-box>h4{
+.card-box > h4 {
   text-align: center;
-  border-left: 3px solid #16c0e9 ;
+  border-left: 3px solid #16c0e9;
 }
-.offer-btn{
+.offer-btn {
   position: absolute;
   bottom: 10%;
-  width:100%;
-  display:flex;
+  width: 100%;
+  display: flex;
   justify-content: center;
 }
-.offer-btn>p{
-  padding: .5em 2em;
+.offer-btn > p {
+  padding: 0.5em 2em;
   background-color: #16c0e9;
   border-radius: 15px;
-  color:#ffffff;
+  color: #ffffff;
 }
 .offers {
   margin: 1em 0;
-  
 }
 .big-p {
   text-align: center;
@@ -434,14 +860,14 @@ export default {
   display: flex;
   justify-content: space-around;
 }
-.circle{
+.circle {
   display: flex;
   justify-content: center;
   align-items: center;
-  width:130px;
+  width: 130px;
   height: 130px;
   border-radius: 50%;
-  background: linear-gradient(to bottom, #1488cc, #2b32b2);
+  background: #2779a7;
   box-shadow: 0px 0px 3px 8px #1488cc;
   margin-bottom: 1.5em;
 }
@@ -464,6 +890,7 @@ export default {
   color: white;
   text-align: center;
   padding: 1em 0;
+  margin: 0;
 }
 .signature {
   font-family: 'Sacramento';
@@ -471,6 +898,7 @@ export default {
   position: relative;
   left: 0px;
   top: 0px;
+  font-weight: 300;
 }
 .box-splide {
   display: flex;
@@ -550,6 +978,9 @@ p {
   font-weight: bold;
   color: blue;
 }
+.aboutUs {
+  position: relative;
+}
 .aboutUs > h3 {
   text-align: center;
 }
@@ -562,7 +993,7 @@ p {
   position: relative;
   padding: 0 0.5em;
   text-align: center;
-  width: 100%;
+  /* width: 100%; */
 }
 .boss-photo > img {
   height: 80px;
@@ -579,7 +1010,8 @@ p {
 .achive {
   padding-bottom: 2em;
   width: 100%;
-  background: linear-gradient(to bottom, #1488cc, #2b32b2);
+  /* background: linear-gradient(to bottom, #1488cc, #2b32b2); */
+  background-color: #2779a7;
 }
 .btn11 {
   position: absolute;
