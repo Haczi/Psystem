@@ -232,30 +232,21 @@
           <h2>Prywatny Dom</h2>
           <p>Instalacja fotowoltaiki</p>
         </figcaption>
-        <img
-          src="./img/solarpanel.jpg"
-          alt="sample45"
-        />
+        <div class="project1"></div>
       </figure>
       <figure class="snip1482">
         <figcaption>
           <h2>Osiedle</h2>
           <p>Monitoring</p>
         </figcaption>
-        <img
-          src="./img/cctv.jpg"
-          alt="sample45"
-        />
+        <div class="project2"></div>
       </figure>
       <figure class="snip1482">
         <figcaption>
           <h2>Magazyn</h2>
           <p>Instalacja elektryczna oraz monitoring</p>
         </figcaption>
-        <img
-          src="./img/hala.jpg"
-          alt="sample45"
-        />
+        <div class="project3"></div>
       </figure>
       </div>
     </section>
@@ -617,6 +608,7 @@ h3{
   -webkit-opacity: 0.5;
   opacity: 0.5;
 }
+
 .snip1401:hover:after,
 .snip1401.hover:after,
 .snip1401:hover figcaption,
@@ -648,14 +640,28 @@ h3{
   -webkit-transition: all 0.35s ease;
   transition: all 0.35s ease;
 }
-.snip1482 img {
+.snip1482>div {
+  /* background-image: url('./img/whitecamera.jpg'); */
+  background-attachment: scroll;
+  background-size: cover;
+  background-position: center;
   position: absolute;
+  height: 100%;
   right: 0%;
   top: 50%;
   opacity: 1;
   width: 100%;
   -webkit-transform: translate(0%, -50%);
   transform: translate(0%, -50%);
+}
+.project1{
+  background-image: url('./img/solarpanel.jpg');
+}
+.project2{
+  background-image: url('./img/hala.jpg');
+}
+.project3{
+  background-image: url('./img/cctv.jpg');
 }
 .snip1482 figcaption {
   position: absolute;
@@ -690,10 +696,11 @@ h3{
   right: 0;
   z-index: 1;
 }
-.snip1482:hover img,
-.snip1482.hover img {
+.snip1482>div:hover,
+.snip1482>div.hover {
   width: 55%;
   right: -10%;
+  height:50%;
 }
 .snip1482:hover figcaption h2,
 .snip1482.hover figcaption h2,
