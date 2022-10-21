@@ -71,7 +71,7 @@
     </header>
     <section class="aboutUs">
       <figure class="snip1401">
-        <img src="psystem/img/whitecamera.jpg" alt="sample67" />
+        <p><img src="./img/whitecamera.jpg" alt="sample67" /></p>
 
         <figcaption>
           <h3>O Nas</h3>
