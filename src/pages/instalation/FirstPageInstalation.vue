@@ -71,7 +71,7 @@
     </header>
     <section class="aboutUs">
       <figure class="snip1401">
-        <img src="psystem/img/whitecamera.jpg" alt="sample67" />
+        <img src="{{site.img_path}}/img/whitecamera.jpg" alt="sample67" />
 
         <figcaption>
           <h3>O Nas</h3>
@@ -247,7 +247,7 @@
           alt="sample45"
         />
       </figure>
-      <%figure% class="snip1482">
+      <figure class="snip1482">
         <figcaption>
           <h2>Magazyn</h2>
           <p>Instalacja elektryczna oraz monitoring</p>
@@ -256,7 +256,7 @@
           src="./img/hala.jpg"
           alt="sample45"
         />
-      </%figure>
+      </figure>
       </div>
     </section>
   </div>
