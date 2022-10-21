@@ -71,8 +71,8 @@
     </header>
     <section class="aboutUs">
       <figure class="snip1401">
-        <p><img src="./img/whitecamera.jpg" alt="sample67" /></p>
-
+        <!-- <div></div><img src="./img/whitecamera.jpg" alt="sample67" /> -->
+<div></div>
         <figcaption>
           <h3>O Nas</h3>
           <p>Cos madrego i krotkiego o firmie</p>
@@ -526,8 +526,13 @@ h3{
   -webkit-transition: all 0.35s ease;
   transition: all 0.35s ease;
 }
-.snip1401 img {
+.snip1401>div {
+  background-image: url('./img/whitecamera.jpg');
+  background-attachment: scroll;
+  background-size: cover;
+  background-position: center;
   max-width: 100%;
+  height:300px;
   backface-visibility: hidden;
 }
 .snip1401 figcaption {
