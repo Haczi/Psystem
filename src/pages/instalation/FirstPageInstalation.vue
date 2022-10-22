@@ -262,28 +262,31 @@
             <ul>
               
               <li>
-                <a @click.stop="changeContactDetail"  :class="activePhone" id="phone"><i class="fas fa-phone"></i></a>
+                <a @click.stop="changeContactDetail" @touchstart="changeContactDetail"  :class="activePhone" id="phone"><i class="fas fa-phone"></i></a>
               </li>
               <li>
-                <a @click.stop="changeContactDetail" id="email" :class="activeEmail"><i class="fas fa-at"></i></a>
+                <a @click.stop="changeContactDetail" @touchstart="changeContactDetail" id="email" :class="activeEmail"><i class="fas fa-at"></i></a>
               </li>
               <li>
-                <a @click="changeContactDetail" id="adress" :class="activeAdress"><i  class="fas fa-map-marker-alt"></i></a>
+                <a @click="changeContactDetail" @touchstart="changeContactDetail" id="adress" :class="activeAdress"><i  class="fas fa-map-marker-alt"></i></a>
               </li>
             </ul>
             <div v-if="showPhone" class="phone">
+              <h2>Zadzwoń</h2>
               <p>Paweł Picheta</p>
               <i class="fas fa-mobile-alt"></i>
               <a href="tel:+48600499205">600 499 205</a>
               <div class="photo-contact"></div>
             </div>
             <div v-if="showEmail" class="phone">
+              <h2>Napisz do Nas</h2>
               <p>E-mail</p>
               <i class="fas fa-envelope"></i>
               <a href="mailto:biuro@psystem.pl" target="_blank">biuro@psystem.pl</a>
               <div class="photo-contact"></div>
             </div>
             <div v-if="showAdress" class="phone">
+              <h2>Zapraszamy</h2>
               <p>Nasza Lokalizacja</p>
               <i class="fas fa-map-marked-alt"></i>
               <a href="https://goo.gl/maps/x8yRSwQcUe3svdnf8" target="_blank">Google Maps - Sprawdź</a>
@@ -414,13 +417,19 @@ export default {
   height:80%;
   justify-content: center;
   margin-top:2em;
-  background-color: rgba(255, 255, 255, 0.7);
+  background-color: rgba(255, 255, 255, 0.936);
   border-radius: 10px;
+  /* border: 2px solid #2779a7; */
+  z-index: -1;
+  box-shadow: 3px 3px 10px rgba(46, 46, 46, 0.18);
 }
 .phone>p{
   color:black;
   padding:1em;
   font-size: 1.2rem;
+}
+.phone>h2{
+  margin-bottom: 0;
 }
 .phone svg{
   color:#2779a7;
@@ -452,10 +461,13 @@ export default {
    line-height: 40px;
    transition: .5s;
    pointer-events:none;
+   padding: 3em;
 
   
 }
-
+.img>ul li a svg{
+  padding: 2em;
+}
  .img>ul li a {
   position: relative;
    display: flex;
