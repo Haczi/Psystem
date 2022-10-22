@@ -72,12 +72,11 @@
     <section class="aboutUs">
       <figure class="snip1401">
         <!-- <div></div><img src="./img/whitecamera.jpg" alt="sample67" /> -->
-<div></div>
+        <div></div>
         <figcaption>
           <h3>O Nas</h3>
           <p>Cos madrego i krotkiego o firmie</p>
         </figcaption>
-        
       </figure>
       <div class="cont-box">
         <div class="box">
@@ -227,27 +226,71 @@
     <section class="realisations">
       <div class="box-realis">
         <h3>Nasze Realizacje</h3>
-      <figure class="snip1482">
-        <figcaption>
-          <h2>Prywatny Dom</h2>
-          <p>Instalacja fotowoltaiki</p>
-        </figcaption>
-        <div class="project1"></div>
-      </figure>
-      <figure class="snip1482">
-        <figcaption>
-          <h2>Osiedle</h2>
-          <p>Monitoring</p>
-        </figcaption>
-        <div class="project2"></div>
-      </figure>
-      <figure class="snip1482">
-        <figcaption>
-          <h2>Magazyn</h2>
-          <p>Instalacja elektryczna oraz monitoring</p>
-        </figcaption>
-        <div class="project3"></div>
-      </figure>
+        <figure class="snip1482">
+          <figcaption>
+            <h2>Prywatny Dom</h2>
+            <p>Instalacja fotowoltaiki</p>
+          </figcaption>
+          <div class="project1"></div>
+        </figure>
+        <figure class="snip1482">
+          <figcaption>
+            <h2>Osiedle</h2>
+            <p>Monitoring</p>
+          </figcaption>
+          <div class="project2"></div>
+        </figure>
+        <figure class="snip1482">
+          <figcaption>
+            <h2>Magazyn</h2>
+            <p>Instalacja elektryczna oraz monitoring</p>
+          </figcaption>
+          <div class="project3"></div>
+        </figure>
+      </div>
+    </section>
+    <section class="contactUs">
+      <div class="contact-box">
+        <p>SKONTAKTUJ SIĘ Z NAMI</p>
+        <div class="card-contact">
+          <!-- <img
+            src="http://pixelcurse.com/wp-content/uploads/2011/02/minimalist_landscape_8.jpg"
+            class="img"
+            
+          /> -->
+          <div class="img" :class="contactActive">
+            <ul>
+              
+              <li>
+                <a @click.stop="changeContactDetail"  :class="activePhone" id="phone"><i class="fas fa-phone"></i></a>
+              </li>
+              <li>
+                <a @click.stop="changeContactDetail" id="email" :class="activeEmail"><i class="fas fa-at"></i></a>
+              </li>
+              <li>
+                <a @click="changeContactDetail" id="adress" :class="activeAdress"><i  class="fas fa-map-marker-alt"></i></a>
+              </li>
+            </ul>
+            <div v-if="showPhone" class="phone">
+              <p>Paweł Picheta</p>
+              <i class="fas fa-mobile-alt"></i>
+              <a href="tel:+48600499205">600 499 205</a>
+              <div class="photo-contact"></div>
+            </div>
+            <div v-if="showEmail" class="phone">
+              <p>E-mail</p>
+              <i class="fas fa-envelope"></i>
+              <a href="mailto:biuro@psystem.pl" target="_blank">biuro@psystem.pl</a>
+              <div class="photo-contact"></div>
+            </div>
+            <div v-if="showAdress" class="phone">
+              <p>Nasza Lokalizacja</p>
+              <i class="fas fa-map-marked-alt"></i>
+              <a href="https://goo.gl/maps/x8yRSwQcUe3svdnf8" target="_blank">Google Maps - Sprawdź</a>
+              <div class="photo-contact"></div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   </div>
@@ -260,6 +303,14 @@ export default {
       menuActive: 'menu',
       navActive: '',
       linkActive: '',
+      contactActive:'',
+      showPhone:true,
+      showEmail:false,
+      showAdress:false,
+      activePhone:'startAnimeContact',
+      activeEmail:'',
+      activeAdress:'',
+      countPlay:0
     };
   },
   methods: {
@@ -291,11 +342,48 @@ export default {
       let myScroll = document
         .querySelector('#listen')
         .getBoundingClientRect().top;
-      console.log(myScroll.toFixed());
-      if (parseInt(myScroll.toFixed()) < 450) {
+      
+      if (parseInt(myScroll.toFixed()) < 450 && this.countPlay===0) {
         this.playAnimation();
+        this.countPlay=1
       }
+      if(parseInt(myScroll.toFixed())<-1000){
+        this.contactActive="card-contact_hover"
+      }
+      if(parseInt(myScroll.toFixed())>-800){
+        this.contactActive=""
+      }
+
     },
+    changeContactDetail(e){
+      if(e.path[1].id==="email"||e.path[2].id==="email"){
+        console.log(e)
+        this.activeEmail="startAnimeContact";
+        this.activeAdress='';
+        this.activePhone='';
+        this.showEmail=true;
+        this.showPhone=false;
+        this.showAdress=false
+      }
+      else if(e.path[1].id==="phone"||e.path[2].id==="phone"){
+        console.log(e)
+        this.activeEmail="";
+        this.activeAdress='';
+        this.activePhone='startAnimeContact';
+        this.showEmail=false;
+        this.showPhone=true;
+        this.showAdress=false
+      }
+      else if(e.path[1].id==="adress"||e.path[2].id==="adress"){
+        console.log(e)
+        this.activeEmail="";
+        this.activeAdress='startAnimeContact';
+        this.activePhone='';
+        this.showEmail=false;
+        this.showPhone=false;
+        this.showAdress=true
+      }
+    }
   },
   beforeMount() {
     document.addEventListener('scroll', this.listenScroll);
@@ -303,14 +391,234 @@ export default {
 };
 </script>
 <style scoped>
-.box-realis{
-  width:100%;
+.photo-contact{
+  position: absolute;
+  top:20%;
+  left:-5%;
+  width:60px;
+  height: 60px;
+  border-radius: 50%;
+  background-attachment: scroll;
+  background-image: url('./img/pawel.png');
+  background-size: cover;
+  background-position: center;
+  box-shadow: 3px 3px 10px rgba(46, 46, 46, 0.18);
+  
+}
+.phone{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  align-items: center;
+  height:80%;
+  justify-content: center;
+  margin-top:2em;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 10px;
+}
+.phone>p{
+  color:black;
+  padding:1em;
+  font-size: 1.2rem;
+}
+.phone svg{
+  color:#2779a7;
+  padding-bottom: .5em;
+  font-size: 1.7rem;
+}
+.phone a{
+  text-decoration: none;
+  color: black;
+}
+.img>ul {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform:translate(-50%, -50%);
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.img>ul li {
+  list-style: none;
+  margin: 0 40px;
+}
+
+ .img>ul li a i{
+  font-size: 20px;
+   color: black;
+   line-height: 40px;
+   transition: .5s;
+   pointer-events:none;
+
+  
+}
+
+ .img>ul li a {
+  position: relative;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   width: 40px;
+   height: 40px;
+   background: white;
+   text-align: center;
+   transform: perspective(1000px) rotate(-30deg) skew(25deg) translate(0,0);
+   transition: .5s;
+   box-shadow: -30px 30px 10px rgba(0,0,0,.5);
+}
+
+.img>ul li a:before {
+  content: '';
+  position: absolute;
+  top: 10px ;
+  left: -20px;
+  height: 100%;
+  width: 20px;
+  background: white;
+  transition: .5s;
+  transform: rotate(0deg) skewY(-45deg);
+}
+
+.img>ul li a:after {
+  content: '';
+  position: absolute;
+  bottom: -20px ;
+  left: -10px;
+  height: 20px;
+  width: 100%;
+  background: white;
+  transition: .5s;
+  transform: rotate(0deg) skewX(-45deg);
+  
+}
+
+.startAnimeContact{
+  animation: start-anime-a .4s ease-out both;
+}
+@keyframes start-anime-a{
+  from{
+    transform: rotate(0deg) skewX(25deg);
+  }
+  to{
+    transform: perspective(1000px) rotate(-30deg) skew(25deg) translate(20px,-20px);
+  box-shadow: -50px 50px 50px rgba(0,0,0,.5);
+  }
+}
+.img>ul li:hover .fab{
+  color:white;
+}
+
+
+.img>ul li:hover:nth-child(1) a {
+  background: white;
+}
+
+.img>ul li:hover:nth-child(1) a:before {
+  background: #5E77AB;
+}
+
+.img>ul li:hover:nth-child(1) a:after {
+  background: #4C68A2;
+}
+
+.img>ul li:hover:nth-child(3) a {
+  background: white;
+}
+
+.img>ul li:hover:nth-child(3) a:before {
+  background: #64B2EE;
+}
+
+.img>ul li:hover:nth-child(3) a:after{
+  background: #73BAF0;
+}
+
+
+.img>ul li:hover:nth-child(2) a {
+  background:white;
+}
+
+.img>ul li:hover:nth-child(2) a:before {
+  background: #E4506B;
+}
+
+.img>ul li:hover:nth-child(2) a:after{
+  background: #E7617A;
+}
+
+.img>ul li:hover:nth-child(4) a {
+  background: white;
+}
+
+.img>ul li:hover:nth-child(4) a:before {
+  background: #171717;
+}
+
+.img>ul li:hover:nth-child(4) a:after{
+  background: #2E2E2E;
+}
+.card-contact {
+  perspective: 3000px;
+  width: 90%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transform-style: preserve-3d;
+}
+.card-contact > .img {
+  display:flex;
+  justify-content: center;
+  transform: rotateX(70deg) rotateZ(-60deg) translate3d(-120px, 0px, 70px);
+  box-shadow: -80px 60px 15px 5px rgba(0, 0, 0, 0.4);
+  transition: all 0.4s;
+  transform-style: preserve-3d;
+  background:rgba(255, 255, 255, 0.5);
+  width: 100%;
+  height: 300px;
+}
+.card-contact_hover {
+  animation: contact-anime 1s ease-out both;
+}
+@keyframes contact-anime{
+  from{
+    transform: rotateX(70deg) rotateZ(-60deg) translate3d(-120px, 0px, 70px);
+  box-shadow: -80px 60px 15px 5px rgba(0, 0, 0, 0.4);
+  }
+  to{
+    transform: rotateX(0deg) rotateZ(0deg) translate3d(0px, 0px, 0px);
+    box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0);
+  }
+}
+.contact-box {
+  position: relative;
+  background-image: url('./img/contact.jpg');
+  width: 100%;
+  height: 500px;
+  background-attachment: scroll;
+  background-size: cover;
+  background-position: center;
+}
+.contact-box > p {
+  color: white;
+  text-align: center;
+  padding: 1em 0;
+  font-weight: bold;
+  font-size: 1.3rem;
+}
+.box-realis {
+  background-color: ;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 1em 0;
+  box-shadow: 3px 3px 10px rgba(46, 46, 46, 0.18);
 }
-h3{
+h3 {
   border-left: 6px solid #2779a7;
   padding-left: 1em;
 }
@@ -517,13 +825,13 @@ h3{
   -webkit-transition: all 0.35s ease;
   transition: all 0.35s ease;
 }
-.snip1401>div {
+.snip1401 > div {
   background-image: url('./img/whitecamera.jpg');
   background-attachment: scroll;
   background-size: cover;
   background-position: center;
   max-width: 100%;
-  height:300px;
+  height: 300px;
   backface-visibility: hidden;
 }
 .snip1401 figcaption {
@@ -633,6 +941,7 @@ h3{
   background-color: #1a1a1a;
   font-size: 16px;
   margin-bottom: 2em;
+  border-radius: 10px;
 }
 .snip1482 * {
   -webkit-box-sizing: border-box;
@@ -640,7 +949,7 @@ h3{
   -webkit-transition: all 0.35s ease;
   transition: all 0.35s ease;
 }
-.snip1482>div {
+.snip1482 > div {
   /* background-image: url('./img/whitecamera.jpg'); */
   background-attachment: scroll;
   background-size: cover;
@@ -653,14 +962,15 @@ h3{
   width: 100%;
   -webkit-transform: translate(0%, -50%);
   transform: translate(0%, -50%);
+  border-radius: 10px;
 }
-.project1{
+.project1 {
   background-image: url('./img/solarpanel.jpg');
 }
-.project2{
+.project2 {
   background-image: url('./img/hala.jpg');
 }
-.project3{
+.project3 {
   background-image: url('./img/cctv.jpg');
 }
 .snip1482 figcaption {
@@ -696,11 +1006,11 @@ h3{
   right: 0;
   z-index: 1;
 }
-.snip1482>div:hover,
-.snip1482>div.hover {
+.snip1482 > div:hover,
+.snip1482 > div.hover {
   width: 55%;
   right: -10%;
-  height:50%;
+  height: 50%;
 }
 .snip1482:hover figcaption h2,
 .snip1482.hover figcaption h2,
@@ -817,7 +1127,7 @@ h3{
 }
 .splide-offers {
 }
-.offers{
+.offers {
   text-align: center;
 }
 .card-box {
