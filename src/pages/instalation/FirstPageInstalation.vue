@@ -262,13 +262,13 @@
             <ul>
               
               <li>
-                <a @click.stop="changeContactDetail" @touchend="changeContactDetail"  :class="activePhone" id="phone"><i class="fas fa-phone"></i></a>
+                <a @click="changeContactDetail" @touchend="changeContactDetail"  :class="activePhone" id="phone"><i class="fas fa-phone"></i></a>
               </li>
               <li>
-                <a @click.stop="changeContactDetail" @touchend="changeContactDetail" id="email" :class="activeEmail"><i class="fas fa-at"></i></a>
+                <a @click="changeContactDetail" @touchend="changeContactDetail" id="email" :class="activeEmail"><i class="fas fa-at"></i></a>
               </li>
               <li @click="changeContactDetail" @touchend="changeContactDetail" >
-                <a @click="changeContactDetail" @touchend="changeContactDetail" id="adress" :class="activeAdress"><i  class="fas fa-map-marker-alt"></i></a>
+                <a @click="changeContactDetail" @touchend="changeContactDetail" id="adress" :class="activeAdress"><i  @click="changeContactDetail" @touchend="changeContactDetail" class="fas fa-map-marker-alt"></i></a>
               </li>
             </ul>
             <div v-if="showPhone" class="phone">
