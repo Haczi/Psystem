@@ -268,7 +268,7 @@
                 <a @click="changeContactDetail" @touchend="changeContactDetail" id="email" :class="activeEmail"><i class="fas fa-at"></i></a>
               </li>
               <li>
-                <a @click="changeContactDetail" @touchend="changeContactDetail" id="adress" :class="activeAdress"><i class="fas fa-map-marker-alt"></i><div id="adress1" @click="changeContactDetail(event)"  @tap="changeContactDetail(event)" class="inside"></div></a>
+                <a @click="changeContactDetail" @touchend="changeContactDetail" id="adress" :class="activeAdress"><i class="fas fa-map-marker-alt"></i><div id="adress1" @click="setAdressContact"   class="inside"></div></a>
               </li>
             </ul>
             <div v-if="showPhone" class="phone">
@@ -388,6 +388,14 @@ export default {
         this.showPhone=false;
         this.showAdress=true
       }
+    },
+    setAdressContact(){
+      this.activeEmail="";
+        this.activeAdress='startAnimeContact';
+        this.activePhone='';
+        this.showEmail=false;
+        this.showPhone=false;
+        this.showAdress=true
     }
   },
   beforeMount() {
