@@ -262,13 +262,13 @@
             <ul>
               
               <li>
-                <a @click="setPhoneContact" @touchend="setPhoneContact"  :class="activePhone" id="phone"><i class="fas fa-phone"></i><div @click="setPhoneContact" @touchend="setPhoneContact" class="inside"></div></a>
+                <a   :class="activePhone" id="phone"><i class="fas fa-phone"></i><div @click="setPhoneContact"  class="inside"></div></a>
               </li>
               <li>
-                <a @click="setEmailContact" @touchend="setEmailContact" id="email" :class="activeEmail"><i class="fas fa-at"></i><div @click="setEmailContact" @touchend="setEmailContact" class="inside"></div></a>
+                <a   id="email" :class="activeEmail"><i class="fas fa-at"></i><div @click="setEmailContact"  class="inside"></div></a>
               </li>
               <li>
-                <a @click="setAdressContact" @touchend="setAdressContact" id="adress" :class="activeAdress"><i class="fas fa-map-marker-alt"></i><div id="adress1" @click="setAdressContact" @touchend="setAdressContact" class="inside"></div></a>
+                <a  id="adress" :class="activeAdress"><i class="fas fa-map-marker-alt"></i><div id="adress1" @click="setAdressContact"  class="inside"></div></a>
               </li>
             </ul>
             <div v-if="showPhone" class="phone">
@@ -551,6 +551,9 @@ z-index: 100000;
 
 .startAnimeContact{
   animation: start-anime-a .4s ease-out 0.01s both;
+  -webkit-animation-duration: 4s;
+  -webkit-animation-fill-mode: both;
+  -webkit-animation-timing-function: ease-out;
   
 }
 @-webkit-keyframes start-anime-a{
