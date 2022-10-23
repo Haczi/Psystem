@@ -359,6 +359,8 @@ export default {
 
     },
     changeContactDetail(e){
+      e.stopPropagation();
+      e.preventDefault();
       if(e.path[1].id==="email"||e.path[2].id==="email"){
         console.log(e)
         this.activeEmail="startAnimeContact";
