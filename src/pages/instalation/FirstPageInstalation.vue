@@ -519,10 +519,13 @@ export default {
 @keyframes start-anime-a{
   from{
     transform: rotate(0deg) skewX(25deg);
+    -webkit-transform: rotate(0deg) skewX(25deg);
   }
   to{
     transform: perspective(1000px) rotate(-30deg) skew(25deg) translate(20px,-20px);
+    -webkit-transform: perspective(1000px) rotate(-30deg) skew(25deg) translate(20px,-20px);
   box-shadow: -50px 50px 50px rgba(0,0,0,.5);
+ -webkit-box-shadow: -50px 50px 50px rgba(0,0,0,.5);
   }
 }
 .img>ul li:hover .fab{
@@ -604,11 +607,15 @@ export default {
 @keyframes contact-anime{
   from{
     transform: rotateX(70deg) rotateZ(-60deg) translate3d(-120px, 0px, 70px);
+    -webkit-transform: rotateX(70deg) rotateZ(-60deg) translate3d(-120px, 0px, 70px);
   box-shadow: -80px 60px 15px 5px rgba(0, 0, 0, 0.4);
+  -webkit-box-shadow: -80px 60px 15px 5px rgba(0, 0, 0, 0.4);
   }
   to{
     transform: rotateX(0deg) rotateZ(0deg) translate3d(0px, 0px, 0px);
+    -webkit-transform: rotateX(0deg) rotateZ(0deg) translate3d(0px, 0px, 0px);
     box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0);
+    -webkit-box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0);
   }
 }
 .contact-box {
