@@ -262,13 +262,13 @@
             <ul>
               
               <li>
-                <a @click.stop="changeContactDetail" @touchstart="changeContactDetail"  :class="activePhone" id="phone"><i class="fas fa-phone"></i></a>
+                <a @click.stop="changeContactDetail" @touchend="changeContactDetail"  :class="activePhone" id="phone"><i class="fas fa-phone"></i></a>
               </li>
               <li>
-                <a @click.stop="changeContactDetail" @touchstart="changeContactDetail" id="email" :class="activeEmail"><i class="fas fa-at"></i></a>
+                <a @click.stop="changeContactDetail" @touchend="changeContactDetail" id="email" :class="activeEmail"><i class="fas fa-at"></i></a>
               </li>
               <li>
-                <a @click="changeContactDetail" @touchstart="changeContactDetail" id="adress" :class="activeAdress"><i  class="fas fa-map-marker-alt"></i></a>
+                <a @click="changeContactDetail" @touchend="changeContactDetail" id="adress" :class="activeAdress"><i  class="fas fa-map-marker-alt"></i></a>
               </li>
             </ul>
             <div v-if="showPhone" class="phone">
@@ -435,6 +435,7 @@ export default {
   color:#2779a7;
   padding-bottom: .5em;
   font-size: 1.7rem;
+  
 }
 .phone a{
   text-decoration: none;
@@ -462,11 +463,13 @@ export default {
    transition: .5s;
    pointer-events:none;
    padding: 3em;
+  
 
   
 }
 .img>ul li a svg{
   padding: 2em;
+  z-index: 2000;
 }
  .img>ul li a {
   position: relative;
@@ -492,6 +495,7 @@ export default {
   background: white;
   transition: .5s;
   transform: rotate(0deg) skewY(-45deg);
+  
 }
 
 .img>ul li a:after {
@@ -504,6 +508,7 @@ export default {
   background: white;
   transition: .5s;
   transform: rotate(0deg) skewX(-45deg);
+  
   
 }
 
