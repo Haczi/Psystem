@@ -268,7 +268,7 @@
                 <a @click="changeContactDetail" @touchend="changeContactDetail" id="email" :class="activeEmail"><i class="fas fa-at"></i></a>
               </li>
               <li>
-                <a @click="changeContactDetail" @touchend="changeContactDetail" id="adress" :class="activeAdress"><i class="fas fa-map-marker-alt"></i><div @click="changeContactDetail(event)"  @tap="changeContactDetail(event)" class="inside"></div></a>
+                <a @click="changeContactDetail" @touchend="changeContactDetail" id="adress" :class="activeAdress"><i class="fas fa-map-marker-alt"></i><div id="adress1" @click="changeContactDetail(event)"  @tap="changeContactDetail(event)" class="inside"></div></a>
               </li>
             </ul>
             <div v-if="showPhone" class="phone">
@@ -379,7 +379,7 @@ export default {
         this.showPhone=true;
         this.showAdress=false
       }
-      else if(e.path[1].id==="adress"||e.path[2].id==="adress"){
+      else if(e.path[1].id==="adress"||e.path[2].id==="adress"||e.target.id==="adress1"){
         console.log(e)
         this.activeEmail="";
         this.activeAdress='startAnimeContact';
@@ -527,33 +527,30 @@ z-index: 100000;
 
 .startAnimeContact{
   animation: start-anime-a .4s ease-out 0.01s both;
-  -webkit-animation-name: start-anime-a;
-  -webkit-animation-direction: .4s;
-  -webkit-animation-timing-function: ease-out;
-  -webkit-animation-fill-mode: both;
+  
 }
 @-webkit-keyframes start-anime-a{
   from{
-    transform: rotate(0deg) skewX(25deg);
     -webkit-transform: rotate(0deg) skewX(25deg);
+    transform: rotate(0deg) skewX(25deg);
   }
   to{
-    transform: perspective(1000px) rotate(-30deg) skew(25deg) translate(20px,-20px);
     -webkit-transform: perspective(1000px) rotate(-30deg) skew(25deg) translate(20px,-20px);
+    transform: perspective(1000px) rotate(-30deg) skew(25deg) translate(20px,-20px);
+    -webkit-box-shadow: -50px 50px 50px rgba(0,0,0,.5);
   box-shadow: -50px 50px 50px rgba(0,0,0,.5);
- -webkit-box-shadow: -50px 50px 50px rgba(0,0,0,.5);
   }
 }
  @keyframes start-anime-a{
   from{
-    transform: rotate(0deg) skewX(25deg);
     -webkit-transform: rotate(0deg) skewX(25deg);
+    transform: rotate(0deg) skewX(25deg);
   }
   to{
-    transform: perspective(1000px) rotate(-30deg) skew(25deg) translate(20px,-20px);
     -webkit-transform: perspective(1000px) rotate(-30deg) skew(25deg) translate(20px,-20px);
+    transform: perspective(1000px) rotate(-30deg) skew(25deg) translate(20px,-20px);
+    -webkit-box-shadow: -50px 50px 50px rgba(0,0,0,.5);
   box-shadow: -50px 50px 50px rgba(0,0,0,.5);
- -webkit-box-shadow: -50px 50px 50px rgba(0,0,0,.5);
   }
 }
 /* .img>ul li:hover .fab{
@@ -634,16 +631,16 @@ z-index: 100000;
 }
 @keyframes contact-anime{
   from{
-    transform: rotateX(70deg) rotateZ(-60deg) translate3d(-120px, 0px, 70px);
     -webkit-transform: rotateX(70deg) rotateZ(-60deg) translate3d(-120px, 0px, 70px);
+    transform: rotateX(70deg) rotateZ(-60deg) translate3d(-120px, 0px, 70px);
+    -webkit-box-shadow: -80px 60px 15px 5px rgba(0, 0, 0, 0.4);
   box-shadow: -80px 60px 15px 5px rgba(0, 0, 0, 0.4);
-  -webkit-box-shadow: -80px 60px 15px 5px rgba(0, 0, 0, 0.4);
   }
   to{
-    transform: rotateX(0deg) rotateZ(0deg) translate3d(0px, 0px, 0px);
     -webkit-transform: rotateX(0deg) rotateZ(0deg) translate3d(0px, 0px, 0px);
-    box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0);
+    transform: rotateX(0deg) rotateZ(0deg) translate3d(0px, 0px, 0px);
     -webkit-box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0);
+    box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0);
   }
 }
 .contact-box {
