@@ -262,13 +262,13 @@
             <ul>
               
               <li>
-                <a @click="changeContactDetail" @touchend="changeContactDetail"  :class="activePhone" id="phone"><i class="fas fa-phone"></i></a>
+                <a @click="setPhoneContact" @touchend="setPhoneContact"  :class="activePhone" id="phone"><i class="fas fa-phone"></i><div @click="setPhoneContact" @touchend="setPhoneContact" class="inside"></div></a>
               </li>
               <li>
-                <a @click="changeContactDetail" @touchend="changeContactDetail" id="email" :class="activeEmail"><i class="fas fa-at"></i></a>
+                <a @click="setEmailContact" @touchend="setEmailContact" id="email" :class="activeEmail"><i class="fas fa-at"></i><div @click="setEmailContact" @touchend="setEmailContact" class="inside"></div></a>
               </li>
               <li>
-                <a @click="changeContactDetail" @touchend="setAdressContact" id="adress" :class="activeAdress"><i class="fas fa-map-marker-alt"></i><div id="adress1" @click="setAdressContact" @touchend="setAdressContact" class="inside"></div></a>
+                <a @click="setAdressContact" @touchend="setAdressContact" id="adress" :class="activeAdress"><i class="fas fa-map-marker-alt"></i><div id="adress1" @click="setAdressContact" @touchend="setAdressContact" class="inside"></div></a>
               </li>
             </ul>
             <div v-if="showPhone" class="phone">
@@ -358,37 +358,37 @@ export default {
       }
 
     },
-    changeContactDetail(e){
-      e.stopPropagation();
-      e.preventDefault();
-      if(e.path[1].id==="email"||e.path[2].id==="email"){
-        console.log(e)
-        this.activeEmail="startAnimeContact";
-        this.activeAdress='';
-        this.activePhone='';
-        this.showEmail=true;
-        this.showPhone=false;
-        this.showAdress=false
-      }
-      else if(e.path[1].id==="phone"||e.path[2].id==="phone"){
-        console.log(e)
-        this.activeEmail="";
-        this.activeAdress='';
-        this.activePhone='startAnimeContact';
-        this.showEmail=false;
-        this.showPhone=true;
-        this.showAdress=false
-      }
-      else if(e.path[1].id==="adress"||e.path[2].id==="adress"||e.target.id==="adress1"){
-        console.log(e)
-        this.activeEmail="";
-        this.activeAdress='startAnimeContact';
-        this.activePhone='';
-        this.showEmail=false;
-        this.showPhone=false;
-        this.showAdress=true
-      }
-    },
+    // changeContactDetail(e){
+    //   e.stopPropagation();
+    //   e.preventDefault();
+    //   if(e.path[1].id==="email"||e.path[2].id==="email"){
+    //     console.log(e)
+    //     this.activeEmail="startAnimeContact";
+    //     this.activeAdress='';
+    //     this.activePhone='';
+    //     this.showEmail=true;
+    //     this.showPhone=false;
+    //     this.showAdress=false
+    //   }
+    //   else if(e.path[1].id==="phone"||e.path[2].id==="phone"){
+    //     console.log(e)
+    //     this.activeEmail="";
+    //     this.activeAdress='';
+    //     this.activePhone='startAnimeContact';
+    //     this.showEmail=false;
+    //     this.showPhone=true;
+    //     this.showAdress=false
+    //   }
+    //   else if(e.path[1].id==="adress"||e.path[2].id==="adress"||e.target.id==="adress1"){
+    //     console.log(e)
+    //     this.activeEmail="";
+    //     this.activeAdress='startAnimeContact';
+    //     this.activePhone='';
+    //     this.showEmail=false;
+    //     this.showPhone=false;
+    //     this.showAdress=true
+    //   }
+    // },
     setAdressContact(){
       this.activeEmail="";
         this.activeAdress='startAnimeContact';
@@ -396,6 +396,22 @@ export default {
         this.showEmail=false;
         this.showPhone=false;
         this.showAdress=true
+    },
+    setEmailContact(){
+        this.activeEmail="startAnimeContact";
+        this.activeAdress='';
+        this.activePhone='';
+        this.showEmail=true;
+        this.showPhone=false;
+        this.showAdress=false
+    },
+    setPhoneContact(){
+      this.activeEmail="";
+        this.activeAdress='';
+        this.activePhone='startAnimeContact';
+        this.showEmail=false;
+        this.showPhone=true;
+        this.showAdress=false
     }
   },
   beforeMount() {
