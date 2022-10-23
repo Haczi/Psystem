@@ -526,7 +526,7 @@ z-index: 100000;
 }
 
 .startAnimeContact{
-  animation: start-anime-a .4s ease-out both;
+  animation: start-anime-a .4s ease-out 0.01s both;
   -webkit-animation-name: start-anime-a;
   -webkit-animation-direction: .4s;
   -webkit-animation-timing-function: ease-out;
@@ -556,7 +556,7 @@ z-index: 100000;
  -webkit-box-shadow: -50px 50px 50px rgba(0,0,0,.5);
   }
 }
-.img>ul li:hover .fab{
+/* .img>ul li:hover .fab{
   color:white;
 }
 
@@ -608,7 +608,7 @@ z-index: 100000;
 
 .img>ul li:hover:nth-child(4) a:after{
   background: #2E2E2E;
-}
+} */
 .card-contact {
   perspective: 3000px;
   width: 90%;
