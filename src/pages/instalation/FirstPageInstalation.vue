@@ -267,8 +267,8 @@
               <li>
                 <a @click="changeContactDetail" @touchend="changeContactDetail" id="email" :class="activeEmail"><i class="fas fa-at"></i></a>
               </li>
-              <li @click="changeContactDetail" @touchend="changeContactDetail" >
-                <a @click="changeContactDetail" @touchend="changeContactDetail" id="adress" :class="activeAdress"><i  @click="changeContactDetail" @touchend="changeContactDetail" class="fas fa-map-marker-alt"></i></a>
+              <li>
+                <a @click="changeContactDetail" @touchend="changeContactDetail" id="adress" :class="activeAdress"><i class="fas fa-map-marker-alt"></i><div @click="changeContactDetail" @touchend="changeContactDetail"  class="inside"></div></a>
               </li>
             </ul>
             <div v-if="showPhone" class="phone">
@@ -467,9 +467,17 @@ export default {
 
   
 }
+.inside{
+  position: absolute;
+  transform: perspective(1000px) rotate(-30deg) skew(-45deg) translate(0,0);
+padding: 3em;
+background-color: transparent;
+z-index: 100000;
+
+}
 .img>ul li a svg{
-  padding: 2em;
-  z-index: 2000;
+  padding: 0em;
+  
 }
  .img>ul li a {
   position: relative;
@@ -484,6 +492,8 @@ export default {
    transition: .5s;
    box-shadow: -30px 30px 10px rgba(0,0,0,.5);
    cursor: pointer;
+   padding: 1em;
+   
 }
 
 .img>ul li a:before {
