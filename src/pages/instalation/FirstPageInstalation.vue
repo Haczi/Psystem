@@ -267,7 +267,7 @@
               <li>
                 <a @click.stop="changeContactDetail" @touchend="changeContactDetail" id="email" :class="activeEmail"><i class="fas fa-at"></i></a>
               </li>
-              <li>
+              <li @click="changeContactDetail" @touchend="changeContactDetail" >
                 <a @click="changeContactDetail" @touchend="changeContactDetail" id="adress" :class="activeAdress"><i  class="fas fa-map-marker-alt"></i></a>
               </li>
             </ul>
