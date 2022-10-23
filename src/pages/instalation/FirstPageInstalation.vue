@@ -515,8 +515,24 @@ export default {
 
 .startAnimeContact{
   animation: start-anime-a .4s ease-out both;
+  -webkit-animation-name: start-anime-a;
+  -webkit-animation-direction: .4s;
+  -webkit-animation-timing-function: ease-out;
+  -webkit-animation-fill-mode: both;
 }
-@keyframes start-anime-a{
+@-webkit-keyframes start-anime-a{
+  from{
+    transform: rotate(0deg) skewX(25deg);
+    -webkit-transform: rotate(0deg) skewX(25deg);
+  }
+  to{
+    transform: perspective(1000px) rotate(-30deg) skew(25deg) translate(20px,-20px);
+    -webkit-transform: perspective(1000px) rotate(-30deg) skew(25deg) translate(20px,-20px);
+  box-shadow: -50px 50px 50px rgba(0,0,0,.5);
+ -webkit-box-shadow: -50px 50px 50px rgba(0,0,0,.5);
+  }
+}
+ @keyframes start-anime-a{
   from{
     transform: rotate(0deg) skewX(25deg);
     -webkit-transform: rotate(0deg) skewX(25deg);
@@ -644,8 +660,11 @@ export default {
   box-shadow: 3px 3px 10px rgba(46, 46, 46, 0.18);
 }
 h3 {
-  border-left: 6px solid #2779a7;
-  padding-left: 1em;
+
+  font-size: 1.3rem;
+  text-transform: uppercase;
+
+  /* padding-left: 1em; */
 }
 @keyframes mainBlock {
   0% {
