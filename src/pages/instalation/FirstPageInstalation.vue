@@ -654,9 +654,26 @@ z-index: 100000;
   height: 300px;
 }
 .card-contact_hover {
-  animation: contact-anime 1s ease-out both;
+  animation: contact-anime .8s ease-out both;
+  -webkit-animation-duration: .8s;
+  -webkit-animation-fill-mode: both;
+  -webkit-animation-timing-function: ease-out;
 }
 @keyframes contact-anime{
+  from{
+    -webkit-transform: rotateX(70deg) rotateZ(-60deg) translate3d(-120px, 0px, 70px);
+    transform: rotateX(70deg) rotateZ(-60deg) translate3d(-120px, 0px, 70px);
+    -webkit-box-shadow: -80px 60px 15px 5px rgba(0, 0, 0, 0.4);
+  box-shadow: -80px 60px 15px 5px rgba(0, 0, 0, 0.4);
+  }
+  to{
+    -webkit-transform: rotateX(0deg) rotateZ(0deg) translate3d(0px, 0px, 0px);
+    transform: rotateX(0deg) rotateZ(0deg) translate3d(0px, 0px, 0px);
+    -webkit-box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0);
+    box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0);
+  }
+}
+@-webkit-keyframes contact-anime{
   from{
     -webkit-transform: rotateX(70deg) rotateZ(-60deg) translate3d(-120px, 0px, 70px);
     transform: rotateX(70deg) rotateZ(-60deg) translate3d(-120px, 0px, 70px);
