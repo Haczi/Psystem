@@ -2,8 +2,7 @@
   <div class="conteiner" @scroll="onScroll">
     <nav class="nav">
       <div class="logo">
-        <p>P</p>
-        <p>-System</p>
+        
       </div>
       <div @click="toogleMenu" class="btn11" :class="menuActive" data-menu="11">
         <div class="icon-left"></div>
@@ -1385,7 +1384,12 @@ p {
   margin: 0;
 }
 .logo {
+  
   display: flex;
+  background-image: url('./img/logo.png');
+  background-position: 10px 100px;
+  background-size: cover;
+  width:140px;
 }
 .logo > p {
   display: flex;
