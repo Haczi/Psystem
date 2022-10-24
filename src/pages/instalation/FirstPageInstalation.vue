@@ -551,7 +551,7 @@ z-index: 100000;
 
 .startAnimeContact{
   animation: start-anime-a .4s ease-out 0.01s both;
-  -webkit-animation-duration: 4s;
+  -webkit-animation-duration: .4s;
   -webkit-animation-fill-mode: both;
   -webkit-animation-timing-function: ease-out;
   
