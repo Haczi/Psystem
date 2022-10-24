@@ -358,37 +358,7 @@ export default {
       }
 
     },
-    // changeContactDetail(e){
-    //   e.stopPropagation();
-    //   e.preventDefault();
-    //   if(e.path[1].id==="email"||e.path[2].id==="email"){
-    //     console.log(e)
-    //     this.activeEmail="startAnimeContact";
-    //     this.activeAdress='';
-    //     this.activePhone='';
-    //     this.showEmail=true;
-    //     this.showPhone=false;
-    //     this.showAdress=false
-    //   }
-    //   else if(e.path[1].id==="phone"||e.path[2].id==="phone"){
-    //     console.log(e)
-    //     this.activeEmail="";
-    //     this.activeAdress='';
-    //     this.activePhone='startAnimeContact';
-    //     this.showEmail=false;
-    //     this.showPhone=true;
-    //     this.showAdress=false
-    //   }
-    //   else if(e.path[1].id==="adress"||e.path[2].id==="adress"||e.target.id==="adress1"){
-    //     console.log(e)
-    //     this.activeEmail="";
-    //     this.activeAdress='startAnimeContact';
-    //     this.activePhone='';
-    //     this.showEmail=false;
-    //     this.showPhone=false;
-    //     this.showAdress=true
-    //   }
-    // },
+   
     setAdressContact(){
       this.activeEmail="";
         this.activeAdress='startAnimeContact';
@@ -702,9 +672,10 @@ z-index: 100000;
   padding: 1em 0;
   font-weight: bold;
   font-size: 1.3rem;
+  font-weight: 300;
 }
 .box-realis {
-  background-color: ;
+  background-color: rgba(237, 237, 237, 0.529);
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -716,6 +687,7 @@ h3 {
 
   font-size: 1.3rem;
   text-transform: uppercase;
+  font-weight: 300;
 
   /* padding-left: 1em; */
 }
@@ -1060,6 +1032,7 @@ h3 {
   -webkit-transform: translate(0%, -50%);
   transform: translate(0%, -50%);
   border-radius: 10px;
+  box-shadow: 3px 3px 10px rgba(46, 46, 46, 0.18);
 }
 .project1 {
   background-image: url('./img/solarpanel.jpg');
@@ -1144,24 +1117,36 @@ h3 {
   opacity: 0;
 }
 .menu-link_active {
-  animation: swing-in-left-fwd 7s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+  animation: swing-in-left-fwd 3s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+  -webkit-animation-name: swing-in-left-fwd;
+  -webkit-animation-duration: 3s;
+  -webkit-animation-fill-mode: both;
+  -webkit-animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 @keyframes swing-in-left-fwd {
   0% {
+    -webkit-transform: rotateY(100deg);
     transform: rotateY(100deg);
-
+    -webkit-transform-origin: left ;
     transform-origin: left;
+    -webkit-opacity:0;
     opacity: 0;
   }
   100% {
+    -webkit-transform: rotateY(0);
     transform: rotateY(0);
-
+    -webkit-transform-origin: left;
     transform-origin: left;
+    -webkit-opacity:1;
     opacity: 1;
   }
 }
 .nav-menu_active {
-  animation: active-nav 1s cubic-bezier(0.55, 0.285, 0.68, 0.53) forwards;
+  animation: active-nav .4s cubic-bezier(0.55, 0.285, 0.68, 0.53) both;
+  -webkit-animation-name: active-nav;
+  -webkit-animation-duration: .4s;
+  -webkit-animation-timing-function:cubic-bezier(0.55, 0.285, 0.68, 0.53) ;
+  -webkit-animation-fill-mode: both;
 }
 @keyframes active-nav {
   0% {
@@ -1170,6 +1155,20 @@ h3 {
   100% {
     position: fixed;
     top: 50px;
+    opacity: 1;
+  }
+}
+@-webkit-keyframes active-nav {
+  0% {
+    -webkit-opacity:0;
+    opacity: 0;
+  }
+  100% {
+    -webkit-position:fixed;
+    position: fixed;
+    -webkit-top:50px;
+    top: 50px;
+    -webkit-opacity:1;
     opacity: 1;
   }
 }
