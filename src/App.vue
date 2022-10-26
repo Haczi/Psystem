@@ -17,6 +17,9 @@ export default {
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Sacramento&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,500;0,900;1,100&family=Sacramento&display=swap');
+
+
 
 
 
@@ -26,7 +29,7 @@ export default {
 }
 
 html {
-  font-family: "Roboto", sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
 body {
