@@ -609,7 +609,9 @@ p {
 /* End Navigation class**************************************************** */
 
 /* Heroimg class************************************ */
+
 .splide-offers {
+  
 }
 .picture-slider,
 .picture-slider2,
@@ -657,6 +659,9 @@ p {
   font-size: 1.3rem;
   padding-bottom: 2em;
   text-align: center;
+}
+header{
+  margin-top: 3em;
 }
 /* End Heroimg class******************************** */
 
@@ -1619,13 +1624,11 @@ h3 {
 
 /* Animation class********************************** */
 .show-project1 {
-  -webkit-animation: project-one 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)
-    both;
+  -webkit-animation: project-one 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
   animation: project-one 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
 .show-project2 {
-  -webkit-animation: project-two 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)
-    both;
+  -webkit-animation: project-two 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
   animation: project-two 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
 .show-project3 {
