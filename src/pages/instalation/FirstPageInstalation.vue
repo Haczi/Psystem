@@ -465,7 +465,8 @@ p {
 
 /* Navigation class*************************************************************** */
 .nav {
-  position: sticky;
+  width: 100%;
+  position: fixed;
   top: 0;
   display: flex;
   background-color: white;
@@ -1313,6 +1314,7 @@ h3 {
 }
 
 .contact-box {
+  overflow: hidden;
   position: relative;
   background-image: url('./img/contact.jpg');
   width: 100%;
@@ -1618,13 +1620,13 @@ h3 {
 /* Animation class********************************** */
 .show-project1 {
   -webkit-animation: project-one 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)
-    forwards;
-  animation: project-one 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+    both;
+  animation: project-one 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
 .show-project2 {
   -webkit-animation: project-two 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)
-    forwards;
-  animation: project-two 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+    both;
+  animation: project-two 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
 .show-project3 {
   -webkit-animation: project-three 0.65s cubic-bezier(0.25, 0.46, 0.45, 0.94)
