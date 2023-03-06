@@ -57,7 +57,7 @@
             <div class="picture-slider3" alt="Sample 2">
               <div class="shadow-text">
                 <p class="main-text text-focus-in4">
-                  <span class="blue">I</span>nstalacje
+                  <span class="blue">I</span>nstalacja
                 </p>
                 <p class="text-focus-in4">Wykonana Z Najwyższą Starannością</p>
               </div>
@@ -67,11 +67,11 @@
       </div>
     </header>
     <section class="aboutUs">
-      <figure class="snip1401">
+      <figure class="snip1401" :class="snip1401Desktop">
         <!-- <div></div><img src="./img/whitecamera.jpg" alt="sample67" /> -->
         <div></div>
         <figcaption>
-          <h3>O Nas</h3>
+          <h3>O NAs</h3>
           <p>Cos madrego i krotkiego o firmie</p>
         </figcaption>
       </figure>
@@ -89,7 +89,7 @@
         </div>
       </div>
 
-      <div class="achive">
+      <div class="achive" :class="achiveDesktop">
         <h3 class="achive-title">Nasze Liczby</h3>
         <div class="line-1">
           <div class="circle">
@@ -175,10 +175,53 @@
         class="splide-offers splide"
         data-splide='{"autoplay":"", "arrows":""}'
       >
-        <Splide
+        <Splide v-if="numbersSlide"
           :options="{ rewind: true }"
-          aria-label="My Favorite Images"
-          data-splide='{"perPage":2}'
+          aria-label="My Favorite images"
+          data-splide='{ "perPage": 4}'
+        >
+          <SplideSlide>
+            <div class="card-box">
+              <h4>Instalacje</h4>
+              <div class="offer-slider1" alt="Sample 1"></div>
+              <div class="offer-btn"><p>Oferta</p></div>
+            </div>
+          </SplideSlide>
+          <SplideSlide>
+            <div class="card-box">
+              <h4>Zabezpieczenia</h4>
+              <div class="offer-slider2" alt="Sample 1"></div>
+              <div class="offer-btn"><p>Oferta</p></div>
+            </div>
+          </SplideSlide>
+          <SplideSlide>
+            <div class="card-box">
+              <h4>Monitoring</h4>
+              <div class="offer-slider3" alt="Sample 1"></div>
+              <div class="offer-btn"><p>Oferta</p></div>
+            </div>
+          </SplideSlide>
+          <SplideSlide>
+            <div class="card-box">
+              <h4>Satelity/TV</h4>
+              <div class="offer-slider4" alt="Sample 1"></div>
+              <div class="offer-btn"><p>Oferta</p></div>
+            </div>
+          </SplideSlide>
+
+          <SplideSlide>
+            <!-- <img  class="picture-slider" src="./img/circle.jpg" alt="Sample 2"/> -->
+            <div class="card-box">
+              <h4>Alarmy</h4>
+              <div class="offer-slider5" alt="Sample 1"></div>
+              <div class="offer-btn"><p>Oferta</p></div>
+            </div>
+          </SplideSlide>
+        </Splide>
+        <Splide v-if="!numbersSlide"
+          :options="{ rewind: true }"
+          aria-label="My Favorite images"
+          data-splide='{ "perPage": 2}'
         >
           <SplideSlide>
             <div class="card-box">
@@ -228,27 +271,31 @@
         <h3>Nasze Realizacje</h3>
         <figure class="snip1482" :class="projectOne">
           <figcaption>
-            <p class="rel-number">#1</p>
-            <h2>Prywatny Dom</h2>
-            <p>Instalacja fotowoltaiki</p>
+            <p class="rel-number" :class="showProjectOneText">#1</p>
+            <h2 :class="showProjectOneText">Prywatny Dom</h2>
+            <p :class="showProjectOneText">Instalacja fotowoltaiki</p>
           </figcaption>
-          <div class="project1"></div>
+          <div
+            @click="toggleShowInfoProject1"
+            class="project1"
+            :class="showProjectOneInfo"
+          ></div>
         </figure>
         <figure class="snip1482" :class="projectTwo">
           <figcaption>
-            <p class="rel-number">#2</p>
-            <h2>Magazyn</h2>
-            <p>Monitoring</p>
+            <p class="rel-number" :class="showProjectTwoText">#2</p>
+            <h2 :class="showProjectTwoText">Magazyn</h2>
+            <p :class="showProjectTwoText">Monitoring</p>
           </figcaption>
-          <div class="project2"></div>
+          <div class="project2"  @click="toggleShowInfoProject2" :class="showProjectTwoInfo"></div>
         </figure>
         <figure class="snip1482" :class="projectThree">
           <figcaption>
-            <p class="rel-number">#3</p>
-            <h2>Osiedle</h2>
-            <p>Instalacja elektryczna oraz monitoring</p>
+            <p class="rel-number" :class="showProjectThirdText">#3</p>
+            <h2 :class="showProjectThirdText">Osiedle</h2>
+            <p :class="showProjectThirdText">Instalacja elektryczna oraz monitoring</p>
           </figcaption>
-          <div class="project3"></div>
+          <div class="project3" @click="toggleShowInfoProject3" :class="showProjectThirdInfo"></div>
         </figure>
       </div>
     </section>
@@ -322,6 +369,7 @@ import '@splidejs/splide/dist/css/themes/splide-default.min.css';
 export default {
   data() {
     return {
+      numbersSlide:true,
       menuActive: 'menu',
       navActive: '',
       linkActive: '',
@@ -336,6 +384,14 @@ export default {
       projectOne: '',
       projectTwo: '',
       projectThree: '',
+      showProjectOneInfo: '',
+      showProjectOneText:'',
+      showProjectTwoInfo: '',
+      showProjectTwoText:'',
+      showProjectThirdInfo: '',
+      showProjectThirdText:'',
+      achiveDesktop:'achive-desktop',
+      snip1401Desktop:'snip1401-desktop'
     };
   },
   methods: {
@@ -393,6 +449,20 @@ export default {
         this.projectThree = 'show-project3';
       }
     },
+    listenOnResize(){
+  console.log(window.innerWidth)
+  if(window.innerWidth<660){
+this.numbersSlide=false
+this.achiveDesktop=""
+this.snip1401Desktop=""
+  }
+  else{
+this.numbersSlide=true
+this.achiveDesktop="achive-desktop"
+this.snip1401Desktop="snip1401-desktop"
+  }
+
+    },
 
     setAdressContact() {
       this.activeEmail = '';
@@ -418,17 +488,65 @@ export default {
       this.showPhone = true;
       this.showAdress = false;
     },
+    toggleShowInfoProject1() {
+      if (this.showProjectOneInfo === '') {
+        this.showProjectOneInfo = 'show-project1-info';
+      } else {
+        this.showProjectOneInfo = '';
+      }
+      if(this.showProjectOneText===''){
+        this.showProjectOneText="show-project1-text"
+      }
+      else{
+        this.showProjectOneText=''
+      }
+    },
+    toggleShowInfoProject2() {
+      if (this.showProjectTwoInfo === '') {
+        this.showProjectTwoInfo = 'show-project1-info';
+      } else {
+        this.showProjectTwoInfo = '';
+      }
+      if(this.showProjectTwoText===''){
+        this.showProjectTwoText="show-project1-text"
+      }
+      else{
+        this.showProjectTwoText=''
+      }
+    },
+    toggleShowInfoProject3() {
+      if (this.showProjectThirdInfo === '') {
+        this.showProjectThirdInfo = 'show-project1-info';
+      } else {
+        this.showProjectThirdInfo = '';
+      }
+      if(this.showProjectThirdText===''){
+        this.showProjectThirdText="show-project1-text"
+      }
+      else{
+        this.showProjectThirdText=''
+      }
+    },
   },
   beforeMount() {
     document.addEventListener('scroll', this.listenScroll);
   },
+  mounted(){
+    window.addEventListener('resize', this.listenOnResize);
+  },
+  unmounted() {
+    window.removeEventListener('resize', this.listenOnResize);
+  },
+  
 };
 </script>
 <style scoped>
 /* Straight class*************************** */
 .conteiner {
+ 
   position: relative;
   transition: all 1s;
+  
 }
 .signature {
   font-family: 'Sacramento';
@@ -446,6 +564,7 @@ export default {
 .splide__arrow {
   opacity: 0;
 }
+
 p {
   margin: 0;
 }
@@ -469,7 +588,7 @@ p {
   position: fixed;
   top: 0;
   display: flex;
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.836);
   height: 50px;
   z-index: 1000;
 }
@@ -517,7 +636,7 @@ p {
   width: 30px;
   height: 30px;
   top: 0px;
-  left: 85%;
+  left: 90%;
   transition-duration: 0.5s;
 }
 .btn11 .icon-left {
@@ -611,7 +730,7 @@ p {
 /* Heroimg class************************************ */
 
 .splide-offers {
-  
+
 }
 .picture-slider,
 .picture-slider2,
@@ -619,7 +738,7 @@ p {
 .picture-slider0 {
   position: relative;
   width: 100%;
-  height: 200px;
+  height: 300px;
   background-image: url('./img/kable.jpg');
   background-attachment: scroll;
   background-size: cover;
@@ -636,22 +755,25 @@ p {
 }
 .main-text {
   position: absolute;
-  top: 50%;
+  top: 30%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
 .main-text > span {
   color: #1488cc;
-  font-size: 2.3rem;
+  font-size: 2.8rem;
   text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
+  font-weight: bold;
 }
 .shadow-text {
+  
   display: flex;
   justify-content: center;
-  align-items: end;
+  align-items: center;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0.7);
 }
 .shadow-text > p {
   color: white;
@@ -659,8 +781,9 @@ p {
   font-size: 1.3rem;
   padding-bottom: 2em;
   text-align: center;
+  padding: .2em;;
 }
-header{
+header {
   margin-top: 3em;
 }
 /* End Heroimg class******************************** */
@@ -698,6 +821,15 @@ header{
   background-color: #000000;
   margin: 0;
 }
+.snip1401-desktop{
+  max-height: 500px;
+}
+.snip1401-desktop > div{
+  height: 800px!important;
+}
+.snip1401-desktop~.cont-box{
+  height:600px;
+}
 .snip1401 * {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
@@ -725,6 +857,13 @@ header{
   width: 40%;
   -webkit-transform: translateX(150%);
   transform: translateX(150%);
+}
+.snip1401-desktop figcaption{
+  right:20%;
+}
+.snip1401-desktop figcaption:before{
+  border-width: 260px 260px 260px 0!important;
+ 
 }
 .snip1401 figcaption:before {
   position: absolute;
@@ -754,11 +893,23 @@ header{
   -webkit-transition: all 0.35s ease;
   transition: all 0.35s ease;
 }
+.snip1401-desktop:after{
+  bottom: 35%;
+  right: 55%;
+  border-width: 330px 330px 0 330px;
+}
 .snip1401 h3,
 .snip1401 p {
   line-height: 1.5em;
   -webkit-transform: translateX(-30px);
   transform: translateX(-30px);
+  margin: 0;
+}
+.snip1401-desktop h3,
+.snip1401-desktop p {
+  line-height: 1.5em;
+  -webkit-transform: translateX(-30px)!important;
+  transform: translateX(-130px)!important;
   margin: 0;
 }
 .snip1401 h3 {
@@ -804,6 +955,16 @@ header{
 .snip1401.hover i {
   -webkit-transform: translateX(0);
   transform: translateX(0);
+  opacity: 1;
+}
+.snip1401-desktop:hover:after,
+.snip1401-desktop.hover:after,
+.snip1401-desktop:hover figcaption,
+.snip1401-desktop.hover figcaption,
+.snip1401-desktop:hover i,
+.snip1401-desktop.hover i {
+  -webkit-transform: translateX(0);
+  transform: translateX(50%);
   opacity: 1;
 }
 .cont-box {
@@ -914,6 +1075,16 @@ header{
   /* background: linear-gradient(to bottom, #1488cc, #2b32b2); */
   background-color: #2779a7;
 }
+.achive-desktop{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content: space-around;
+}.achive-desktop> h3{
+width:100%;
+}
+.achive-desktop .line-1{
+  width:50%;
+}
 .big-p {
   text-align: center;
   padding-bottom: 0.1em;
@@ -982,8 +1153,9 @@ header{
   flex-direction: column;
   align-items: center;
   width: 90%;
+  max-width: 200px;
   height: 280px;
-  margin: 0 0.3em;
+  margin: auto;
   box-shadow: 3px 3px 10px rgba(46, 46, 46, 0.18);
   border-radius: 10px;
   overflow: hidden;
@@ -994,7 +1166,7 @@ header{
   width: 100%;
   color: #ffffff;
   text-align: center;
-  background: linear-gradient(to bottom, #0575e6, #021b79);
+  background:#1488cc;
   /* background-color: #2779a7; */
   margin: 0;
   padding: 1em 0;
@@ -1087,17 +1259,41 @@ header{
 }
 .snip1482 > div:hover,
 .snip1482 > div.hover {
-  width: 55%;
+  /* width: 55%;
   right: -10%;
-  height: 50%;
+  height: 50%; */
 }
 .snip1482:hover figcaption h2,
 .snip1482.hover figcaption h2,
 .snip1482:hover figcaption p,
 .snip1482.hover figcaption p {
-  -webkit-transform: translateX(0px);
+  /* -webkit-transform: translateX(0px);
   transform: translateX(0px);
-  opacity: 1;
+  opacity: 1; */
+}
+@keyframes show-text-project1 {
+  0% {
+    -webkit-transform: translateX(20px);
+    transform: translateX(20px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0px);
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+@-webkit-keyframes show-text-project1 {
+  0% {
+    -webkit-transform: translateX(20px);
+    transform: translateX(20px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0px);
+    transform: translateX(0px);
+    opacity: 1;
+  }
 }
 .snip1482 {
   font-family: 'Fauna One', Arial, sans-serif;
@@ -1138,14 +1334,19 @@ header{
   border-radius: 10px;
   box-shadow: 3px 3px 10px rgba(46, 46, 46, 0.18);
 }
+.realisations{
+  overflow: hidden;
+
+}
 .box-realis {
-  background: linear-gradient(to top, #00084f, #004e92);
+  background: #01162b;
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 1em 0;
   box-shadow: 3px 3px 10px rgba(46, 46, 46, 0.18);
+  overflow: hidden;
 }
 h3 {
   font-size: 1.3rem;
@@ -1180,7 +1381,7 @@ h3 {
 
 /* Contact class************************************ */
 .photo-contact {
-  position: absolute;
+  /* position: absolute;
   top: 20%;
   left: -5%;
   width: 60px;
@@ -1190,7 +1391,7 @@ h3 {
   background-image: url('./img/pawel.png');
   background-size: cover;
   background-position: center;
-  box-shadow: 3px 3px 10px rgba(46, 46, 46, 0.18);
+  box-shadow: 3px 3px 10px rgba(46, 46, 46, 0.18); */
 }
 .phone {
   position: relative;
@@ -1299,6 +1500,7 @@ h3 {
 .card-contact {
   perspective: 3000px;
   width: 90%;
+  max-width: 500px;
   position: absolute;
   left: 50%;
   top: 50%;
@@ -1321,7 +1523,8 @@ h3 {
 .contact-box {
   overflow: hidden;
   position: relative;
-  background-image: url('./img/contact.jpg');
+  background: #01162b;
+  /* background-image: url('./img/contact.jpg'); */
   width: 100%;
   height: 500px;
   background-attachment: scroll;
@@ -1620,6 +1823,28 @@ h3 {
     visibility: visible;
   }
 }
+@keyframes show-info-project1 {
+  0% {
+    width: 100%;
+    height: 100%;
+  }
+  100% {
+    width: 55%;
+    height: 50%;
+    right: -10%;
+  }
+}
+@-webkit-keyframes show-info-project1 {
+  0% {
+    width: 100%;
+    height: 100%;
+  }
+  100% {
+    width: 55%;
+    height: 50%;
+    right: -10%;
+  }
+}
 /* End key Frames*********************************** */
 
 /* Animation class********************************** */
@@ -1635,6 +1860,16 @@ h3 {
   -webkit-animation: project-three 0.65s cubic-bezier(0.25, 0.46, 0.45, 0.94)
     both;
   animation: project-three 0.65s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+.show-project1-info {
+  -webkit-animation: show-info-project1 0.65s
+    cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: show-info-project1 0.65s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+.show-project1-text {
+  -webkit-animation: show-text-project1 0.65s
+    cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: show-text-project1 0.65s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
 .startAnimeContact {
   animation: start-anime-a 0.4s ease-out 0.01s both;
@@ -1675,4 +1910,17 @@ h3 {
   animation: text-focus-in 17s cubic-bezier(0.55, 0.285, 0.68, 0.53) forwards;
 }
 /* End Animation class****************************** */
+
+
+@media only screen and (min-width: 960px){
+  .box-realis{
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  .box-realis h3{
+    text-align: center;
+    width:100%;
+  }
+}
 </style>
