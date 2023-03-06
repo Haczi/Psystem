@@ -10,7 +10,7 @@ import NotFound from './pages/NotFound.vue';
 const router = createRouter({
   history: createWebHistory(),
   routes: [
-    { path: '/psystem',name:'MainPage', component: MainPage },
+    { path: '/psystem/',name:'MainPage', component: MainPage },
     { path: '/instalation', component: FirstPageInstalation },
     // {
     //   path: '/coaches/:id',
