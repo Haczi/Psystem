@@ -1,5 +1,5 @@
 <template>
-  <div class="conteiner" @scroll="onScroll">
+  <div v-if="!loading" class="conteiner" @scroll="onScroll">
     <nav class="nav">
       <div class="logo"></div>
       <div @click="toogleMenu" class="btn11" :class="menuActive" data-menu="11">
@@ -363,8 +363,10 @@
       </div>
     </section>
   </div>
+  <base-spinner v-if="loading"></base-spinner>
 </template>
 <script>
+
 import '@splidejs/splide/dist/css/themes/splide-default.min.css';
 export default {
   data() {
@@ -391,7 +393,8 @@ export default {
       showProjectThirdInfo: '',
       showProjectThirdText:'',
       achiveDesktop:'achive-desktop',
-      snip1401Desktop:'snip1401-desktop'
+      snip1401Desktop:'snip1401-desktop',
+      loading:true
     };
   },
   methods: {
@@ -527,11 +530,17 @@ this.snip1401Desktop="snip1401-desktop"
         this.showProjectThirdText=''
       }
     },
+    turnOffLoading(){
+      setTimeout(() => {
+  this.loading=false
+}, 2000);
+    }
   },
   beforeMount() {
     document.addEventListener('scroll', this.listenScroll);
   },
   mounted(){
+    this.turnOffLoading()
     window.addEventListener('resize', this.listenOnResize);
   },
   unmounted() {
