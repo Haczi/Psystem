@@ -538,6 +538,7 @@ this.snip1401Desktop="snip1401-desktop"
   },
   beforeMount() {
     document.addEventListener('scroll', this.listenScroll);
+    window.addEventListener('resize', this.listenOnResize);
   },
   mounted(){
     this.turnOffLoading()
