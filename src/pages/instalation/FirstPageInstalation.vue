@@ -392,8 +392,8 @@ export default {
       showProjectTwoText:'',
       showProjectThirdInfo: '',
       showProjectThirdText:'',
-      achiveDesktop:'achive-desktop',
-      snip1401Desktop:'snip1401-desktop',
+      achiveDesktop:'',
+      snip1401Desktop:'',
       loading:true
     };
   },
@@ -538,7 +538,7 @@ this.snip1401Desktop="snip1401-desktop"
   },
   beforeMount() {
     document.addEventListener('scroll', this.listenScroll);
-    this.listenOnResize();
+   
   },
   mounted(){
     this.turnOffLoading()
