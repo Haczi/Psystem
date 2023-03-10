@@ -29,7 +29,7 @@ export default {
 }
 
 html {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 body {

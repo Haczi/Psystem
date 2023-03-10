@@ -8,13 +8,13 @@
       </div>
     </nav>
     <ul class="nav-menu" :class="navActive">
-      <li><p :class="linkActive">HOME</p></li>
-      <li><p :class="linkActive">OFERTA</p></li>
-      <li><p :class="linkActive">PROJEKTY</p></li>
-      <li><p :class="linkActive">KONTAKT</p></li>
+      <li><p @click="scrollTo()" :class="linkActive">HOME</p></li>
+      <li><p @click="scrollToOffer()"  :class="linkActive">OFERTA</p></li>
+      <li><p @click="scrollToProjects()" :class="linkActive">PROJEKTY</p></li>
+      <li><p @click="scrollToContact()" :class="linkActive">KONTAKT</p></li>
       <li><p :class="linkActive">O NAS</p></li>
     </ul>
-    <header>
+    <header ref="home">
       <div
         class="splide-offers splide"
         data-splide='{"autoplay":"", "arrows":""}'
@@ -27,29 +27,34 @@
           <SplideSlide>
             <div class="picture-slider" alt="Sample 1">
               <div class="shadow-text">
-                <p class="main-text text-focus-in"><span>M</span>onitoring</p>
-                <p class="text-focus-in">Zadbamy O Twoje Bezbieczeństwo</p>
+                <p class="main-text text-focus-in"><span class="blue">M</span><span>onitoring</span></p>
+                <p class="text-focus-in">Nie trać z oczu swojego biznesu - monitoruj go z nami!</p>
               </div>
+              <div class="slider-bg"></div>
             </div>
           </SplideSlide>
           <SplideSlide>
             <div class="picture-slider0" alt="Sample 1">
               <div class="shadow-text">
                 <p class="main-text text-focus-in2">
-                  <span class="blue">Smart</span> Home
+                  <span class="blue">Smart</span><span>Home</span>
                 </p>
-                <p class="text-focus-in2">Dom Będzie Twoim Przyjacielem</p>
+               
+                  <p class="text-focus-in2">Twój dom, twoje zasady - zyskaj kontrolę dzięki SmartHome!</p>
+                
               </div>
+              <div class="slider-bg"></div>
             </div>
           </SplideSlide>
           <SplideSlide>
             <div class="picture-slider2" alt="Sample 1">
               <div class="shadow-text">
                 <p class="main-text text-focus-in3">
-                  <span class="blue">Foto</span>woltanika
+                  <span class="blue">Foto</span><span>woltanika</span>
                 </p>
-                <p class="text-focus-in3">Czysta Energia</p>
+                <p class="text-focus-in3">Oszczędzaj, nie tracąc na jakości - zainwestuj w fotowoltaikę i zyskaj więcej!</p>
               </div>
+              <div class="slider-bg"></div>
             </div>
           </SplideSlide>
 
@@ -57,10 +62,11 @@
             <div class="picture-slider3" alt="Sample 2">
               <div class="shadow-text">
                 <p class="main-text text-focus-in4">
-                  <span class="blue">I</span>nstalacja
+                  <span class="blue">I</span><span>nstalacja</span>
                 </p>
-                <p class="text-focus-in4">Wykonana Z Najwyższą Starannością</p>
+                <p class="text-focus-in4">Odkryj nowe możliwości dzięki instalacjom elektrycznym na miarę XXI wieku!</p>
               </div>
+              <div class="slider-bg"></div>
             </div>
           </SplideSlide>
         </Splide>
@@ -71,8 +77,8 @@
         <!-- <div></div><img src="./img/whitecamera.jpg" alt="sample67" /> -->
         <div></div>
         <figcaption>
-          <h3>O NAs</h3>
-          <p>Cos madrego i krotkiego o firmie</p>
+          <h3 style="color:black;">O NAs</h3>
+          <p style="border-right: 5px solid #1488cc; padding-right:.3em; text-align: right;">Jesteśmy dynamiczną firmą, oferującą wysokiej jakości produkty i usługi, zorientowaną na potrzeby klientów i rozwój.</p>
         </figcaption>
       </figure>
       <div class="cont-box">
@@ -90,90 +96,127 @@
       </div>
 
       <div class="achive" :class="achiveDesktop">
-        <h3 class="achive-title">Nasze Liczby</h3>
+        <h3 class="achive-title">Dlaczego My?</h3>
         <div class="line-1">
-          <div class="circle">
-            <div class="circle-1">
-              <number
-                ref="number2"
-                :from="0"
-                :to="10"
-                animationPaused
-                :format="theFormat"
-                :duration="5"
-                :delay="0.3"
-                easing="Power1.easeOut"
-                class="big-p"
-                >10</number
-              >
-              <p class="small-p">Lat</p>
-              <p class="small-p">doświadczenia</p>
+          <div class="box-circle">
+            <div class="circle">
+              <div class="circle-1">
+                <number
+                  ref="number2"
+                  :from="0"
+                  :to="10"
+                  animationPaused
+                  :format="theFormat"
+                  :duration="5"
+                  :delay="0.3"
+                  easing="Power1.easeOut"
+                  class="big-p"
+                  >10</number
+                >
+                <p class="small-p">Lat</p>
+                <p class="small-p">doświadczenia</p>
+              </div>
             </div>
+            <div  class="text-circle">
+              <transition name="bounce">
+                <p v-if="showText" style="border-left: 5px solid #1488cc; padding-left:.3em">
+                Nasza firma ma 10 lat doświadczenia. Lider w branży. Skoncentrowani na klientach. Innowacyjni. Ambitni plany na przyszłość.
+              </p>
+              </transition>
+          </div> 
           </div>
-          <div class="circle">
-            <div class="circle-1">
-              <number
-                ref="number1"
-                :from="0"
-                :to="500"
-                animationPaused
-                :format="theFormat"
-                :duration="5"
-                :delay="0.3"
-                easing="Power1.easeOut"
-                class="big-p"
-                >500</number
-              >
-              <p class="small-p">nie wiem</p>
-              <p class="small-p">cos tam</p>
+          <div class="box-circle">
+            <div class="text-circle" >
+              <transition name="bounce-left">
+                <p v-if="showText" style="border-right: 5px solid #1488cc; padding-right:.3em; text-align: right;">
+                Współpracujemy z ponad 100 firmami, oferując ich innowacyjne rozwiązania dopasowane do Twoich potrzeb.
+              </p>
+              </transition>
+          </div> 
+            <div class="circle">
+              <div class="circle-1">
+                <number
+                  ref="number1"
+                  :from="0"
+                  :to="100"
+                  animationPaused
+                  :format="theFormat"
+                  :duration="5"
+                  :delay="0.3"
+                  easing="Power1.easeOut"
+                  class="big-p"
+                  >100</number
+                >
+                <p class="small-p">Partnerów</p>
+                <p class="small-p">Biznesowych</p>
+              </div>
             </div>
           </div>
         </div>
         <div id="listen" class="line-1">
-          <div class="circle">
-            <div class="circle-1">
-              <number
-                ref="number3"
-                :from="0"
-                :to="300"
-                animationPaused
-                :format="theFormat"
-                :duration="5"
-                :delay="0.3"
-                easing="Power1.easeOut"
-                class="big-p"
-                >300</number
-              >
-              <p class="small-p">Ukończonych</p>
-              <p class="small-p">projektów</p>
+          <div class="box-circle">
+            <div class="circle">
+              <div class="circle-1">
+                <number
+                  ref="number3"
+                  :from="0"
+                  :to="300"
+                  animationPaused
+                  :format="theFormat"
+                  :duration="5"
+                  :delay="0.3"
+                  easing="Power1.easeOut"
+                  class="big-p"
+                  >300</number
+                >
+                <p class="small-p">Ukończonych</p>
+                <p class="small-p">projektów</p>
+              </div>
             </div>
+            <div class="text-circle">
+              <transition name="bounce">
+                <p v-if="showText" style="border-left: 5px solid #1488cc; padding-left:.3em">
+                Zakończyliśmy już ponad 300 dużych projektów, zapewniając najlepsze rozwiązania dla naszych klientów.
+              </p>
+              </transition>
+          </div> 
           </div>
-          <div class="circle">
-            <div class="circle-1">
-              <number
-                ref="number4"
-                :from="0"
-                :to="1000"
-                animationPaused
-                :format="theFormat"
-                :duration="5"
-                :delay="0.3"
-                easing="Power1.easeOut"
-                class="big-p"
-                >1000+</number
-              >
-              <p class="small-p">Zadowolonych</p>
-              <p class="small-p">klientów</p>
+          <div class="box-circle">
+            <div class="text-circle">
+              <transition name="bounce-left">
+                <p v-if="showText" style="border-right: 5px solid #1488cc; padding-right:.3em; text-align: right">
+                Ponad 1000 zadowolonych klientów doceniło nasze wysokiej jakości produkty i usługi.
+              </p>
+              </transition>
+          </div> 
+            <div class="circle">
+              <div class="circle-1">
+                <number
+                  ref="number4"
+                  :from="0"
+                  :to="1000"
+                  animationPaused
+                  :format="theFormat"
+                  :duration="5"
+                  :delay="0.3"
+                  easing="Power1.easeOut"
+                  class="big-p"
+                  >1000+</number
+                >
+                <p class="small-p">Zadowolonych</p>
+                <p class="small-p">klientów</p>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
-    <section class="offers">
+    <section ref="offersId" class="offers">
       <h3 class="offers-title">Oferta</h3>
       <div
         class="splide-offers splide"
         data-splide='{"autoplay":"", "arrows":""}'
+        style="height:100%!important"
       >
         <Splide v-if="numbersSlide"
           :options="{ rewind: true }"
@@ -266,7 +309,7 @@
         *Szczegółowa oferta zostanie przedstawiona po skontaktowaniu się z nami
       </p>
     </section>
-    <section id="listen_projects" class="realisations">
+    <section ref="projects" id="listen_projects" class="realisations">
       <div class="box-realis">
         <h3>Nasze Realizacje</h3>
         <figure class="snip1482" :class="projectOne">
@@ -299,7 +342,7 @@
         </figure>
       </div>
     </section>
-    <section class="contactUs">
+    <section ref="contact" class="contactUs">
       <div class="contact-box">
         <p>SKONTAKTUJ SIĘ Z NAMI</p>
         <div class="card-contact">
@@ -371,7 +414,7 @@ import '@splidejs/splide/dist/css/themes/splide-default.min.css';
 export default {
   data() {
     return {
-      numbersSlide:true,
+      numbersSlide:false,
       menuActive: 'menu',
       navActive: '',
       linkActive: '',
@@ -394,7 +437,8 @@ export default {
       showProjectThirdText:'',
       achiveDesktop:'',
       snip1401Desktop:'',
-      loading:true
+      loading:true,
+      showText:false
     };
   },
   methods: {
@@ -435,6 +479,7 @@ export default {
       if (parseInt(myScroll.toFixed()) < 450 && this.countPlay === 0) {
         this.playAnimation();
         this.countPlay = 1;
+        this.showText = true;
       }
       if (parseInt(myScroll.toFixed()) < -1000) {
         this.contactActive = 'card-contact_hover';
@@ -534,6 +579,22 @@ this.snip1401Desktop="snip1401-desktop"
       setTimeout(() => {
   this.loading=false
 }, 2000);
+    },
+    scrollTo(){
+      this.$refs.home.scrollIntoView({ behavior: 'smooth' })
+      this.toogleMenu()
+    },
+    scrollToOffer(){
+      this.$refs.offersId.scrollIntoView({ behavior: 'smooth' })
+      this.toogleMenu()
+    },
+    scrollToProjects(){
+      this.$refs.projects.scrollIntoView({ behavior: 'smooth' })
+      this.toogleMenu()
+    },
+    scrollToContact(){
+      this.$refs.contact.scrollIntoView({ behavior: 'smooth' })
+      this.toogleMenu()
     }
   },
   beforeMount() {
@@ -608,14 +669,14 @@ p {
   flex-direction: column;
   position: absolute;
   list-style: none;
-  top: -300px;
+  top: -350px;
   left: 0;
   align-items: start;
   margin: auto;
   margin-bottom: 30px;
   padding: 20px 0;
   width: 100%;
-  height: auto;
+  height: 200px;
   background-color: #ffffff;
   z-index: 2;
 }
@@ -740,19 +801,26 @@ p {
 /* Heroimg class************************************ */
 
 .splide-offers {
-
+  width:100vw;
+height:400px;
 }
+
 .picture-slider,
 .picture-slider2,
 .picture-slider3,
 .picture-slider0 {
-  position: relative;
-  width: 100%;
-  height: 300px;
+  position:relative;
+  /* width: 100%; */
+  max-width: 100%;
+  min-height: 400px;
   background-image: url('./img/kable.jpg');
+ 
   background-attachment: scroll;
-  background-size: cover;
+  background-size:cover;
   background-position: center;
+  display: flex;
+	justify-content: center;
+	align-items: center;
 }
 .picture-slider2 {
   background-image: url('./img/solar.png');
@@ -764,38 +832,64 @@ p {
   background-image: url('./img/smarthome.jpg');
 }
 .main-text {
-  position: absolute;
+  height:50%;
+  /* width:100%; */
+  display:flex;
+  justify-content: center;
+  align-items: end;
+  /* position: absolute;
   top: 30%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); */
 }
 
-.main-text > span {
-  color: #1488cc;
+
+.main-text span {
+  /* color: #1488cc; */
   font-size: 2.8rem;
   text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
-  font-weight: bold;
+  font-weight: 500;
+  margin:0!important;
+  
+}
+.blue{
+   color: #1488cc;
+   font-weight:bold!important;
 }
 .shadow-text {
-  
-  display: flex;
-  justify-content: center;
+  display:flex;
+  flex-direction: column;
   align-items: center;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
+  text-align: center;
+		margin-top: 3em;
+		z-index: 10;
+  
 }
 .shadow-text > p {
+  display:flex;
+  flex-wrap: wrap;
   color: white;
   font-weight: 400;
+  width:80%;
   font-size: 1.3rem;
   padding-bottom: 2em;
   text-align: center;
-  padding: .2em;;
+  word-wrap: break-word;
+  padding: .2em;
+}
+.slider-bg{
+  position: absolute;
+		height: 100%;
+		width: 100%;
+		background-color: rgba(1, 1, 1, 0.618);
 }
 header {
+  display:flex;
+  justify-content: center;
+  align-items: center;
   margin-top: 3em;
 }
+
 /* End Heroimg class******************************** */
 
 /* AboutUs class************************************ */
@@ -832,10 +926,10 @@ header {
   margin: 0;
 }
 .snip1401-desktop{
-  max-height: 500px;
+  max-height: 240px;
 }
 .snip1401-desktop > div{
-  height: 800px!important;
+  height: 780px!important;
 }
 .snip1401-desktop~.cont-box{
   height:600px;
@@ -919,7 +1013,7 @@ header {
 .snip1401-desktop p {
   line-height: 1.5em;
   -webkit-transform: translateX(-30px)!important;
-  transform: translateX(-130px)!important;
+  transform: translateX(-30px)!important;
   margin: 0;
 }
 .snip1401 h3 {
@@ -983,7 +1077,7 @@ header {
   display: flex;
   width: 100%;
   justify-content: center;
-  align-items: center;
+  align-items: start;
 }
 .box {
   width: 250px;
@@ -1110,6 +1204,7 @@ width:100%;
 }
 .line-1 {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-around;
 }
 .circle {
@@ -1122,6 +1217,21 @@ width:100%;
   background: #2779a7;
   box-shadow: 0px 0px 3px 8px #1488cc;
   margin-bottom: 1.5em;
+}
+.box-circle{
+  display:flex;
+  justify-content: space-around;
+  width:100%;
+  margin-bottom: 1em;
+}
+.text-circle{
+  color:white;
+  display:flex;
+  justify-content: end;
+  align-items: start;
+  width:50%;
+  text-align: left;
+  font-size: 12px;
 }
 .circle-1 {
   display: flex;
@@ -1143,6 +1253,8 @@ width:100%;
   text-align: center;
   padding: 1em 0;
   margin: 0;
+  margin-bottom: 1em;
+  border-bottom: 7px solid #1488cc
 }
 /* End Achive class********************************* */
 
@@ -1899,6 +2011,7 @@ h3 {
   -webkit-animation-duration: 3s;
   -webkit-animation-fill-mode: both;
   -webkit-animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  cursor:pointer
 }
 .nav-menu_active {
   animation: active-nav 0.4s cubic-bezier(0.55, 0.285, 0.68, 0.53) both;
@@ -1932,5 +2045,51 @@ h3 {
     text-align: center;
     width:100%;
   }
+}
+
+/* vue animation */
+.bounce-enter-active {
+  animation: bounce-in 0.5s;
+}
+.bounce-leave-active {
+  animation: bounce-in 0.5s reverse;
+}
+@keyframes bounce-in {
+  0% {
+    transform: translateX(200%);
+  opacity: 0;
+  }
+  50% {
+    transform: scale(1.25);
+  }
+  100% {
+    transform: translateX(0%);
+  opacity: 1;
+  }
+}
+.bounce-left-enter-active {
+  animation: bounce-in-left 0.5s;
+}
+.bounce-left-leave-active {
+  animation: bounce-in-left 0.5s reverse;
+}
+@keyframes bounce-in-left {
+  0% {
+    transform: translateX(-100%);
+  opacity: 0;
+  }
+  50% {
+    transform: scale(1.25);
+  }
+  100% {
+    transform: translateX(0%);
+  opacity: 1;
+  }
+}
+.hidden-text {
+  position: relative;
+  left: -100%;
+  opacity: 0;
+  transition: all 0.5s ease;
 }
 </style>
