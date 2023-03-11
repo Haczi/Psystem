@@ -273,7 +273,7 @@
             <div class="card-box">
               <h4>Instalacje</h4>
               <div class="offer-slider1" alt="Sample 1"></div>
-              <router-link to="/instalation/oferta/instalacje" class="offer-btn"><p>Oferta</p></router-link>
+              <router-link to="/oferta_instalacje" class="offer-btn"><p>Oferta</p></router-link>
             </div>
           </SplideSlide>
           <SplideSlide>
