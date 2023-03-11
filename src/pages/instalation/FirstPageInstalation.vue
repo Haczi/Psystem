@@ -9,7 +9,7 @@
     </nav>
     <ul class="nav-menu" :class="navActive">
       <li><p @click="scrollTo()" :class="linkActive">HOME</p></li>
-      <li><p @click="scrollToOffer()"  :class="linkActive">OFERTA</p></li>
+      <li><p @click="scrollToOffer()" :class="linkActive">OFERTA</p></li>
       <li><p @click="scrollToProjects()" :class="linkActive">PROJEKTY</p></li>
       <li><p @click="scrollToContact()" :class="linkActive">KONTAKT</p></li>
       <li><p :class="linkActive">O NAS</p></li>
@@ -27,8 +27,12 @@
           <SplideSlide>
             <div class="picture-slider" alt="Sample 1">
               <div class="shadow-text">
-                <p class="main-text text-focus-in"><span class="blue">M</span><span>onitoring</span></p>
-                <p class="text-focus-in">Nie trać z oczu swojego biznesu - monitoruj go z nami!</p>
+                <p class="main-text text-focus-in">
+                  <span class="blue">M</span><span>onitoring</span>
+                </p>
+                <p class="text-focus-in">
+                  Nie trać z oczu swojego biznesu - monitoruj go z nami!
+                </p>
               </div>
               <div class="slider-bg"></div>
             </div>
@@ -39,9 +43,10 @@
                 <p class="main-text text-focus-in2">
                   <span class="blue">Smart</span><span>Home</span>
                 </p>
-               
-                  <p class="text-focus-in2">Twój dom, twoje zasady - zyskaj kontrolę dzięki SmartHome!</p>
-                
+
+                <p class="text-focus-in2">
+                  Twój dom, twoje zasady - zyskaj kontrolę dzięki SmartHome!
+                </p>
               </div>
               <div class="slider-bg"></div>
             </div>
@@ -52,7 +57,10 @@
                 <p class="main-text text-focus-in3">
                   <span class="blue">Foto</span><span>woltanika</span>
                 </p>
-                <p class="text-focus-in3">Oszczędzaj, nie tracąc na jakości - zainwestuj w fotowoltaikę i zyskaj więcej!</p>
+                <p class="text-focus-in3">
+                  Oszczędzaj, nie tracąc na jakości - zainwestuj w fotowoltaikę
+                  i zyskaj więcej!
+                </p>
               </div>
               <div class="slider-bg"></div>
             </div>
@@ -64,7 +72,10 @@
                 <p class="main-text text-focus-in4">
                   <span class="blue">I</span><span>nstalacja</span>
                 </p>
-                <p class="text-focus-in4">Odkryj nowe możliwości dzięki instalacjom elektrycznym na miarę XXI wieku!</p>
+                <p class="text-focus-in4">
+                  Odkryj nowe możliwości dzięki instalacjom elektrycznym na
+                  miarę XXI wieku!
+                </p>
               </div>
               <div class="slider-bg"></div>
             </div>
@@ -77,8 +88,17 @@
         <!-- <div></div><img src="./img/whitecamera.jpg" alt="sample67" /> -->
         <div></div>
         <figcaption>
-          <h3 style="color:black;">O NAs</h3>
-          <p style="border-right: 5px solid #1488cc; padding-right:.3em; text-align: right;">Jesteśmy dynamiczną firmą, oferującą wysokiej jakości produkty i usługi, zorientowaną na potrzeby klientów i rozwój.</p>
+          <h3 style="color: black">O NAs</h3>
+          <p
+            style="
+              border-right: 5px solid #1488cc;
+              padding-right: 0.3em;
+              text-align: right;
+            "
+          >
+            Jesteśmy dynamiczną firmą, oferującą wysokiej jakości produkty i
+            usługi, zorientowaną na potrzeby klientów i rozwój.
+          </p>
         </figcaption>
       </figure>
       <div class="cont-box">
@@ -117,22 +137,35 @@
                 <p class="small-p">doświadczenia</p>
               </div>
             </div>
-            <div  class="text-circle">
+            <div class="text-circle">
               <transition name="bounce">
-                <p v-if="showText" style="border-left: 5px solid #1488cc; padding-left:.3em">
-                Nasza firma ma 10 lat doświadczenia. Lider w branży. Skoncentrowani na klientach. Innowacyjni. Ambitni plany na przyszłość.
-              </p>
+                <p
+                  v-if="showText"
+                  style="border-left: 5px solid #1488cc; padding-left: 0.3em"
+                >
+                  Nasza firma ma 10 lat doświadczenia. Lider w branży.
+                  Skoncentrowani na klientach. Innowacyjni. Ambitni plany na
+                  przyszłość.
+                </p>
               </transition>
-          </div> 
+            </div>
           </div>
           <div class="box-circle">
-            <div class="text-circle" >
+            <div class="text-circle">
               <transition name="bounce-left">
-                <p v-if="showText" style="border-right: 5px solid #1488cc; padding-right:.3em; text-align: right;">
-                Współpracujemy z ponad 100 firmami, oferując ich innowacyjne rozwiązania dopasowane do Twoich potrzeb.
-              </p>
+                <p
+                  v-if="showText"
+                  style="
+                    border-right: 5px solid #1488cc;
+                    padding-right: 0.3em;
+                    text-align: right;
+                  "
+                >
+                  Współpracujemy z ponad 100 firmami, oferując ich innowacyjne
+                  rozwiązania dopasowane do Twoich potrzeb.
+                </p>
               </transition>
-          </div> 
+            </div>
             <div class="circle">
               <div class="circle-1">
                 <number
@@ -175,20 +208,32 @@
             </div>
             <div class="text-circle">
               <transition name="bounce">
-                <p v-if="showText" style="border-left: 5px solid #1488cc; padding-left:.3em">
-                Zakończyliśmy już ponad 300 dużych projektów, zapewniając najlepsze rozwiązania dla naszych klientów.
-              </p>
+                <p
+                  v-if="showText"
+                  style="border-left: 5px solid #1488cc; padding-left: 0.3em"
+                >
+                  Zakończyliśmy już ponad 300 dużych projektów, zapewniając
+                  najlepsze rozwiązania dla naszych klientów.
+                </p>
               </transition>
-          </div> 
+            </div>
           </div>
           <div class="box-circle">
             <div class="text-circle">
               <transition name="bounce-left">
-                <p v-if="showText" style="border-right: 5px solid #1488cc; padding-right:.3em; text-align: right">
-                Ponad 1000 zadowolonych klientów doceniło nasze wysokiej jakości produkty i usługi.
-              </p>
+                <p
+                  v-if="showText"
+                  style="
+                    border-right: 5px solid #1488cc;
+                    padding-right: 0.3em;
+                    text-align: right;
+                  "
+                >
+                  Ponad 1000 zadowolonych klientów doceniło nasze wysokiej
+                  jakości produkty i usługi.
+                </p>
               </transition>
-          </div> 
+            </div>
             <div class="circle">
               <div class="circle-1">
                 <number
@@ -216,9 +261,10 @@
       <div
         class="splide-offers splide"
         data-splide='{"autoplay":"", "arrows":""}'
-        style="height:100%!important"
+        style="height: 100% !important"
       >
-        <Splide v-if="numbersSlide"
+        <Splide
+          v-if="numbersSlide"
           :options="{ rewind: true }"
           aria-label="My Favorite images"
           data-splide='{ "perPage": 4}'
@@ -227,7 +273,7 @@
             <div class="card-box">
               <h4>Instalacje</h4>
               <div class="offer-slider1" alt="Sample 1"></div>
-              <div class="offer-btn"><p>Oferta</p></div>
+              <router-link to="/instalation/oferta/instalacje" class="offer-btn"><p>Oferta</p></router-link>
             </div>
           </SplideSlide>
           <SplideSlide>
@@ -261,7 +307,8 @@
             </div>
           </SplideSlide>
         </Splide>
-        <Splide v-if="!numbersSlide"
+        <Splide
+          v-if="!numbersSlide"
           :options="{ rewind: true }"
           aria-label="My Favorite images"
           data-splide='{ "perPage": 2}'
@@ -330,15 +377,25 @@
             <h2 :class="showProjectTwoText">Magazyn</h2>
             <p :class="showProjectTwoText">Monitoring</p>
           </figcaption>
-          <div class="project2"  @click="toggleShowInfoProject2" :class="showProjectTwoInfo"></div>
+          <div
+            class="project2"
+            @click="toggleShowInfoProject2"
+            :class="showProjectTwoInfo"
+          ></div>
         </figure>
         <figure class="snip1482" :class="projectThree">
           <figcaption>
             <p class="rel-number" :class="showProjectThirdText">#3</p>
             <h2 :class="showProjectThirdText">Osiedle</h2>
-            <p :class="showProjectThirdText">Instalacja elektryczna oraz monitoring</p>
+            <p :class="showProjectThirdText">
+              Instalacja elektryczna oraz monitoring
+            </p>
           </figcaption>
-          <div class="project3" @click="toggleShowInfoProject3" :class="showProjectThirdInfo"></div>
+          <div
+            class="project3"
+            @click="toggleShowInfoProject3"
+            :class="showProjectThirdInfo"
+          ></div>
         </figure>
       </div>
     </section>
@@ -409,12 +466,16 @@
   <base-spinner v-if="loading"></base-spinner>
 </template>
 <script>
-
 import '@splidejs/splide/dist/css/themes/splide-default.min.css';
 export default {
   data() {
     return {
-      numbersSlide:false,
+      dynamicSplideOptions: {
+        perPage: 2,
+        gap: 20,
+      },
+      twoSlide: 2,
+      numbersSlide: false,
       menuActive: 'menu',
       navActive: '',
       linkActive: '',
@@ -430,15 +491,15 @@ export default {
       projectTwo: '',
       projectThree: '',
       showProjectOneInfo: '',
-      showProjectOneText:'',
+      showProjectOneText: '',
       showProjectTwoInfo: '',
-      showProjectTwoText:'',
+      showProjectTwoText: '',
       showProjectThirdInfo: '',
-      showProjectThirdText:'',
-      achiveDesktop:'',
-      snip1401Desktop:'',
-      loading:true,
-      showText:false
+      showProjectThirdText: '',
+      achiveDesktop: '',
+      snip1401Desktop: '',
+      loading: true,
+      showText: false,
     };
   },
   methods: {
@@ -497,19 +558,17 @@ export default {
         this.projectThree = 'show-project3';
       }
     },
-    listenOnResize(){
-  console.log(window.innerWidth)
-  if(window.innerWidth<660){
-this.numbersSlide=false
-this.achiveDesktop=""
-this.snip1401Desktop=""
-  }
-  else{
-this.numbersSlide=true
-this.achiveDesktop="achive-desktop"
-this.snip1401Desktop="snip1401-desktop"
-  }
-
+    listenOnResize() {
+      console.log(window.innerWidth);
+      if (window.innerWidth < 660) {
+        this.numbersSlide = false;
+        this.achiveDesktop = '';
+        this.snip1401Desktop = '';
+      } else {
+        this.numbersSlide = true;
+        this.achiveDesktop = 'achive-desktop';
+        this.snip1401Desktop = 'snip1401-desktop';
+      }
     },
 
     setAdressContact() {
@@ -542,11 +601,10 @@ this.snip1401Desktop="snip1401-desktop"
       } else {
         this.showProjectOneInfo = '';
       }
-      if(this.showProjectOneText===''){
-        this.showProjectOneText="show-project1-text"
-      }
-      else{
-        this.showProjectOneText=''
+      if (this.showProjectOneText === '') {
+        this.showProjectOneText = 'show-project1-text';
+      } else {
+        this.showProjectOneText = '';
       }
     },
     toggleShowInfoProject2() {
@@ -555,11 +613,10 @@ this.snip1401Desktop="snip1401-desktop"
       } else {
         this.showProjectTwoInfo = '';
       }
-      if(this.showProjectTwoText===''){
-        this.showProjectTwoText="show-project1-text"
-      }
-      else{
-        this.showProjectTwoText=''
+      if (this.showProjectTwoText === '') {
+        this.showProjectTwoText = 'show-project1-text';
+      } else {
+        this.showProjectTwoText = '';
       }
     },
     toggleShowInfoProject3() {
@@ -568,56 +625,57 @@ this.snip1401Desktop="snip1401-desktop"
       } else {
         this.showProjectThirdInfo = '';
       }
-      if(this.showProjectThirdText===''){
-        this.showProjectThirdText="show-project1-text"
-      }
-      else{
-        this.showProjectThirdText=''
+      if (this.showProjectThirdText === '') {
+        this.showProjectThirdText = 'show-project1-text';
+      } else {
+        this.showProjectThirdText = '';
       }
     },
-    turnOffLoading(){
+    turnOffLoading() {
       setTimeout(() => {
-  this.loading=false
-}, 2000);
+        this.loading = false;
+      }, 2000);
     },
-    scrollTo(){
-      this.$refs.home.scrollIntoView({ behavior: 'smooth' })
-      this.toogleMenu()
+    scrollTo() {
+      this.$refs.home.scrollIntoView({ behavior: 'smooth' });
+      this.toogleMenu();
     },
-    scrollToOffer(){
-      this.$refs.offersId.scrollIntoView({ behavior: 'smooth' })
-      this.toogleMenu()
+    scrollToOffer() {
+      this.$refs.offersId.scrollIntoView({ behavior: 'smooth' });
+      this.toogleMenu();
     },
-    scrollToProjects(){
-      this.$refs.projects.scrollIntoView({ behavior: 'smooth' })
-      this.toogleMenu()
+    scrollToProjects() {
+      this.$refs.projects.scrollIntoView({ behavior: 'smooth' });
+      this.toogleMenu();
     },
-    scrollToContact(){
-      this.$refs.contact.scrollIntoView({ behavior: 'smooth' })
-      this.toogleMenu()
-    }
+    scrollToContact() {
+      this.$refs.contact.scrollIntoView({ behavior: 'smooth' });
+      this.toogleMenu();
+    },
   },
   beforeMount() {
     document.addEventListener('scroll', this.listenScroll);
-   
+    if (window.innerWidth > 500) {
+      this.numbersSlide = true;
+      this.achiveDesktop = 'achive-desktop';
+      this.snip1401Desktop = 'snip1401-desktop';
+    }
   },
-  mounted(){
-    this.turnOffLoading()
+  mounted() {
+    this.turnOffLoading();
     window.addEventListener('resize', this.listenOnResize);
   },
+
   unmounted() {
     window.removeEventListener('resize', this.listenOnResize);
   },
-  
 };
 </script>
 <style scoped>
 /* Straight class*************************** */
 .conteiner {
- 
   position: relative;
   transition: all 1s;
-  
 }
 .signature {
   font-family: 'Sacramento';
@@ -667,7 +725,7 @@ p {
   /*nav menu hidden for mobile*/
   display: flex;
   flex-direction: column;
-  position: absolute;
+  position: fixed;
   list-style: none;
   top: -350px;
   left: 0;
@@ -801,26 +859,26 @@ p {
 /* Heroimg class************************************ */
 
 .splide-offers {
-  width:100vw;
-height:400px;
+  width: 100vw;
+  height: 400px;
 }
 
 .picture-slider,
 .picture-slider2,
 .picture-slider3,
 .picture-slider0 {
-  position:relative;
+  position: relative;
   /* width: 100%; */
   max-width: 100%;
   min-height: 400px;
   background-image: url('./img/kable.jpg');
- 
+
   background-attachment: scroll;
-  background-size:cover;
+  background-size: cover;
   background-position: center;
   display: flex;
-	justify-content: center;
-	align-items: center;
+  justify-content: center;
+  align-items: center;
 }
 .picture-slider2 {
   background-image: url('./img/solar.png');
@@ -832,9 +890,9 @@ height:400px;
   background-image: url('./img/smarthome.jpg');
 }
 .main-text {
-  height:50%;
+  height: 50%;
   /* width:100%; */
-  display:flex;
+  display: flex;
   justify-content: center;
   align-items: end;
   /* position: absolute;
@@ -843,48 +901,45 @@ height:400px;
   transform: translate(-50%, -50%); */
 }
 
-
 .main-text span {
   /* color: #1488cc; */
   font-size: 2.8rem;
   text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
   font-weight: 500;
-  margin:0!important;
-  
+  margin: 0 !important;
 }
-.blue{
-   color: #1488cc;
-   font-weight:bold!important;
+.blue {
+  color: #1488cc;
+  font-weight: bold !important;
 }
 .shadow-text {
-  display:flex;
+  display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-		margin-top: 3em;
-		z-index: 10;
-  
+  margin-top: 3em;
+  z-index: 10;
 }
 .shadow-text > p {
-  display:flex;
+  display: flex;
   flex-wrap: wrap;
   color: white;
   font-weight: 400;
-  width:80%;
+  width: 80%;
   font-size: 1.3rem;
   padding-bottom: 2em;
   text-align: center;
   word-wrap: break-word;
-  padding: .2em;
+  padding: 0.2em;
 }
-.slider-bg{
+.slider-bg {
   position: absolute;
-		height: 100%;
-		width: 100%;
-		background-color: rgba(1, 1, 1, 0.618);
+  height: 100%;
+  width: 100%;
+  background-color: rgba(1, 1, 1, 0.618);
 }
 header {
-  display:flex;
+  display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 3em;
@@ -925,14 +980,14 @@ header {
   background-color: #000000;
   margin: 0;
 }
-.snip1401-desktop{
+.snip1401-desktop {
   max-height: 240px;
 }
-.snip1401-desktop > div{
-  height: 780px!important;
+.snip1401-desktop > div {
+  height: 780px !important;
 }
-.snip1401-desktop~.cont-box{
-  height:600px;
+.snip1401-desktop ~ .cont-box {
+  height: 600px;
 }
 .snip1401 * {
   -webkit-box-sizing: border-box;
@@ -962,12 +1017,11 @@ header {
   -webkit-transform: translateX(150%);
   transform: translateX(150%);
 }
-.snip1401-desktop figcaption{
-  right:20%;
+.snip1401-desktop figcaption {
+  right: 20%;
 }
-.snip1401-desktop figcaption:before{
-  border-width: 260px 260px 260px 0!important;
- 
+.snip1401-desktop figcaption:before {
+  border-width: 260px 260px 260px 0 !important;
 }
 .snip1401 figcaption:before {
   position: absolute;
@@ -997,7 +1051,7 @@ header {
   -webkit-transition: all 0.35s ease;
   transition: all 0.35s ease;
 }
-.snip1401-desktop:after{
+.snip1401-desktop:after {
   bottom: 35%;
   right: 55%;
   border-width: 330px 330px 0 330px;
@@ -1012,8 +1066,8 @@ header {
 .snip1401-desktop h3,
 .snip1401-desktop p {
   line-height: 1.5em;
-  -webkit-transform: translateX(-30px)!important;
-  transform: translateX(-30px)!important;
+  -webkit-transform: translateX(-30px) !important;
+  transform: translateX(-30px) !important;
   margin: 0;
 }
 .snip1401 h3 {
@@ -1179,15 +1233,16 @@ header {
   /* background: linear-gradient(to bottom, #1488cc, #2b32b2); */
   background-color: #2779a7;
 }
-.achive-desktop{
-  display:flex;
-  flex-wrap:wrap;
+.achive-desktop {
+  display: flex;
+  flex-wrap: wrap;
   justify-content: space-around;
-}.achive-desktop> h3{
-width:100%;
 }
-.achive-desktop .line-1{
-  width:50%;
+.achive-desktop > h3 {
+  width: 100%;
+}
+.achive-desktop .line-1 {
+  width: 50%;
 }
 .big-p {
   text-align: center;
@@ -1218,18 +1273,18 @@ width:100%;
   box-shadow: 0px 0px 3px 8px #1488cc;
   margin-bottom: 1.5em;
 }
-.box-circle{
-  display:flex;
+.box-circle {
+  display: flex;
   justify-content: space-around;
-  width:100%;
+  width: 100%;
   margin-bottom: 1em;
 }
-.text-circle{
-  color:white;
-  display:flex;
+.text-circle {
+  color: white;
+  display: flex;
   justify-content: end;
   align-items: start;
-  width:50%;
+  width: 50%;
   text-align: left;
   font-size: 12px;
 }
@@ -1254,7 +1309,7 @@ width:100%;
   padding: 1em 0;
   margin: 0;
   margin-bottom: 1em;
-  border-bottom: 7px solid #1488cc
+  border-bottom: 7px solid #1488cc;
 }
 /* End Achive class********************************* */
 
@@ -1288,7 +1343,7 @@ width:100%;
   width: 100%;
   color: #ffffff;
   text-align: center;
-  background:#1488cc;
+  background: #1488cc;
   /* background-color: #2779a7; */
   margin: 0;
   padding: 1em 0;
@@ -1456,9 +1511,8 @@ width:100%;
   border-radius: 10px;
   box-shadow: 3px 3px 10px rgba(46, 46, 46, 0.18);
 }
-.realisations{
+.realisations {
   overflow: hidden;
-
 }
 .box-realis {
   background: #01162b;
@@ -2011,7 +2065,7 @@ h3 {
   -webkit-animation-duration: 3s;
   -webkit-animation-fill-mode: both;
   -webkit-animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  cursor:pointer
+  cursor: pointer;
 }
 .nav-menu_active {
   animation: active-nav 0.4s cubic-bezier(0.55, 0.285, 0.68, 0.53) both;
@@ -2034,16 +2088,15 @@ h3 {
 }
 /* End Animation class****************************** */
 
-
-@media only screen and (min-width: 960px){
-  .box-realis{
+@media only screen and (min-width: 960px) {
+  .box-realis {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
   }
-  .box-realis h3{
+  .box-realis h3 {
     text-align: center;
-    width:100%;
+    width: 100%;
   }
 }
 
@@ -2057,14 +2110,14 @@ h3 {
 @keyframes bounce-in {
   0% {
     transform: translateX(200%);
-  opacity: 0;
+    opacity: 0;
   }
   50% {
     transform: scale(1.25);
   }
   100% {
     transform: translateX(0%);
-  opacity: 1;
+    opacity: 1;
   }
 }
 .bounce-left-enter-active {
@@ -2076,14 +2129,14 @@ h3 {
 @keyframes bounce-in-left {
   0% {
     transform: translateX(-100%);
-  opacity: 0;
+    opacity: 0;
   }
   50% {
     transform: scale(1.25);
   }
   100% {
     transform: translateX(0%);
-  opacity: 1;
+    opacity: 1;
   }
 }
 .hidden-text {

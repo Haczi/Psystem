@@ -13,12 +13,14 @@ import VueSplide from '@splidejs/vue-splide';
 import VueNumber from 'vue-number-animation';
 // import Observer from 'vue-intersection-observer';
 import router from './router.js';
+import store from './store/index.js'
 import App from './App.vue';
 import BaseSpinner from './components/layout/BaseSpinner.vue'
 const app = createApp(App)
 app.use(VueNumber);
 // app.use(Observer);
 app.use(router);
+app.use(store);
 app.component('base-spinner', BaseSpinner)
 app.use( VueSplide );
 app.mount('#app');

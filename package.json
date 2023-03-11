@@ -20,7 +20,7 @@
     "vue-intersection-observer": "^0.1.9",
     "vue-number-animation": "^1.1.2",
     "vue-router": "^4.0.0-0",
-    "vuex": "^4.0.0-0"
+    "vuex": "^4.1.0"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",

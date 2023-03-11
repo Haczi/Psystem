@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router';
 
 import FirstPageInstalation from './pages/instalation/FirstPageInstalation.vue';
+import ElectricInstalation from './pages/instalation/ElectricInstalation.vue';
 import MainPage from './components/layout/MainPage.vue';
 // import CoachRegistation from './pages/coaches/CoachRegistration.vue';
 // import ContactCoach from './pages/requests/ContactCoach.vue';
@@ -12,6 +13,7 @@ const router = createRouter({
   routes: [
     { path: '/psystem/',name:'MainPage', component: MainPage },
     { path: '/instalation', component: FirstPageInstalation },
+    { path: '/instalation/oferta/instalacje', component: ElectricInstalation },
     // {
     //   path: '/coaches/:id',
     //   component: CoachDetail,
