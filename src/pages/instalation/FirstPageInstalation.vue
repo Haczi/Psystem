@@ -1356,6 +1356,7 @@ header {
   width: 100%;
   display: flex;
   justify-content: center;
+  text-decoration: none;
 }
 .offer-btn > p {
   padding: 0.5em 2em;
