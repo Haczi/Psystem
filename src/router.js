@@ -13,7 +13,7 @@ const router = createRouter({
   routes: [
     { path: '/psystem/',name:'MainPage', component: MainPage },
     { path: '/instalation', component: FirstPageInstalation },
-    { path: '/instalation/oferta/instalacje', component: ElectricInstalation },
+    { path: '/oferta_instalacje', component: ElectricInstalation },
     // {
     //   path: '/coaches/:id',
     //   component: CoachDetail,

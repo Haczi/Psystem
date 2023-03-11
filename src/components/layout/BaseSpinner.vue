@@ -34,8 +34,8 @@ body {
   margin: auto;
 }
 .b {
-  background: #414ce6;
-  border: 3px solid #386af3;
+  background: #4485f1;
+  border: 3px solid #4f98f6;
   width: 45px;
   height: 45px;
   border-radius: 5px;
