@@ -358,6 +358,7 @@
     </section>
     <section ref="projects" id="listen_projects" class="realisations">
       <div class="box-realis">
+      
         <h3>Nasze Realizacje</h3>
         <figure class="snip1482" :class="projectOne">
           <figcaption>
@@ -398,6 +399,7 @@
           ></div>
         </figure>
       </div>
+      
     </section>
     <section ref="contact" class="contactUs">
       <div class="contact-box">
@@ -1516,6 +1518,7 @@ header {
   overflow: hidden;
 }
 .box-realis {
+  background: #4f98f6;
   background: #01162b;
   width: 100%;
   display: flex;
@@ -1700,6 +1703,7 @@ h3 {
 .contact-box {
   overflow: hidden;
   position: relative;
+  background: #4f98f6;
   background: #01162b;
   /* background-image: url('./img/contact.jpg'); */
   width: 100%;
