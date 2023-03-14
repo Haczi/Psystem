@@ -1281,6 +1281,7 @@ header {
 
 /* Achive class************************************* */
 .achive {
+  overflow: hidden;
   padding-bottom: 2em;
   width: 100%;
   /* background: linear-gradient(to bottom, #1488cc, #2b32b2); */
@@ -1311,6 +1312,7 @@ header {
   text-shadow: 2px 2px 2px rgba(206, 89, 55, 0);
 }
 .line-1 {
+  overflow: hidden;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
