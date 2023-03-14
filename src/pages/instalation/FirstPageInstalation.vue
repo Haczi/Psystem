@@ -101,7 +101,7 @@
           </p>
         </figcaption>
       </figure>
-      <div class="cont-box">
+      <div @click="addHoverClass" class="cont-box">
         <div class="box">
           <div class="title">
             <span class="block1"></span>
@@ -137,10 +137,11 @@
                 <p class="small-p">doświadczenia</p>
               </div>
             </div>
+
             <div class="text-circle">
               <transition name="bounce">
                 <p
-                  v-if="showText"
+                  v-if="showText1"
                   style="border-left: 5px solid #1488cc; padding-left: 0.3em"
                 >
                   Nasza firma ma 10 lat doświadczenia. Lider w branży.
@@ -154,7 +155,7 @@
             <div class="text-circle">
               <transition name="bounce-left">
                 <p
-                  v-if="showText"
+                  v-if="showText2"
                   style="
                     border-right: 5px solid #1488cc;
                     padding-right: 0.3em;
@@ -209,7 +210,7 @@
             <div class="text-circle">
               <transition name="bounce">
                 <p
-                  v-if="showText"
+                  v-if="showText3"
                   style="border-left: 5px solid #1488cc; padding-left: 0.3em"
                 >
                   Zakończyliśmy już ponad 300 dużych projektów, zapewniając
@@ -273,7 +274,9 @@
             <div class="card-box">
               <h4>Instalacje</h4>
               <div class="offer-slider1" alt="Sample 1"></div>
-              <router-link to="/oferta_instalacje" class="offer-btn"><p>Oferta</p></router-link>
+              <router-link to="/oferta_instalacje" class="offer-btn"
+                ><p>Oferta</p></router-link
+              >
             </div>
           </SplideSlide>
           <SplideSlide>
@@ -317,7 +320,9 @@
             <div class="card-box">
               <h4>Instalacje</h4>
               <div class="offer-slider1" alt="Sample 1"></div>
-              <router-link to="/oferta_instalacje" class="offer-btn"><p>Oferta</p></router-link>
+              <router-link to="/oferta_instalacje" class="offer-btn"
+                ><p>Oferta</p></router-link
+              >
             </div>
           </SplideSlide>
           <SplideSlide>
@@ -358,7 +363,6 @@
     </section>
     <section ref="projects" id="listen_projects" class="realisations">
       <div class="box-realis">
-      
         <h3>Nasze Realizacje</h3>
         <figure class="snip1482" :class="projectOne">
           <figcaption>
@@ -399,7 +403,6 @@
           ></div>
         </figure>
       </div>
-      
     </section>
     <section ref="contact" class="contactUs">
       <div class="contact-box">
@@ -489,6 +492,9 @@ export default {
       activeEmail: '',
       activeAdress: '',
       countPlay: 0,
+      countPlay1: 0,
+      countPlay2: 0,
+      countPlay3: 0,
       projectOne: '',
       projectTwo: '',
       projectThree: '',
@@ -502,9 +508,28 @@ export default {
       snip1401Desktop: '',
       loading: true,
       showText: false,
+      showText1: false,
+      showText2: false,
+      showText3: false,
+      hoverIsOn:false
     };
   },
   methods: {
+    addHoverClass() {
+      const element = document.querySelector('.snip1401');
+      
+      if(this.hoverIsOn===false) {
+        element.classList.add('hover');
+        this.hoverIsOn=true
+      }
+      else if(this.hoverIsOn===true){
+        element.classList.remove('hover');
+        this.hoverIsOn=false
+      }
+      console.log(this.hoverIsOn)
+      
+     
+    },
     toogleMenu() {
       if (this.menuActive === 'menu') {
         this.menuActive = 'open';
@@ -523,13 +548,20 @@ export default {
       console.log('Animation ends!');
     },
     playAnimation() {
-      this.$refs.number1.play();
-      this.$refs.number2.play();
-      this.$refs.number3.play();
       this.$refs.number4.play();
+    },
+    playAnimation1() {
+      this.$refs.number2.play();
+    },
+    playAnimation2() {
+      this.$refs.number1.play();
+    },
+    playAnimation3() {
+      this.$refs.number3.play();
     },
 
     listenScroll() {
+      console.log(window.innerHeight);
       let myScroll = document
         .querySelector('#listen')
         .getBoundingClientRect().top;
@@ -537,14 +569,29 @@ export default {
         .querySelector('#listen_projects')
         .getBoundingClientRect().top;
       // console.log(myScroll);
-      console.log(myScroll2 + 'cs');
+      console.log(parseInt(myScroll.toFixed()) + 'cs');
 
+      if (parseInt(myScroll.toFixed()) < 1010 && this.countPlay1 === 0) {
+        this.playAnimation1();
+        this.countPlay1 = 1;
+        this.showText1 = true;
+      }
+      if (parseInt(myScroll.toFixed()) < 850 && this.countPlay2 === 0) {
+        this.playAnimation2();
+        this.countPlay2 = 1;
+        this.showText2 = true;
+      }
+      if (parseInt(myScroll.toFixed()) < 650 && this.countPlay3 === 0) {
+        this.playAnimation3();
+        this.countPlay3 = 1;
+        this.showText3 = true;
+      }
       if (parseInt(myScroll.toFixed()) < 450 && this.countPlay === 0) {
         this.playAnimation();
         this.countPlay = 1;
         this.showText = true;
       }
-      if (parseInt(myScroll.toFixed()) < -1000) {
+      if (parseInt(myScroll.toFixed()) < -900) {
         this.contactActive = 'card-contact_hover';
       }
       if (parseInt(myScroll.toFixed()) > -800) {
@@ -678,6 +725,8 @@ export default {
 .conteiner {
   position: relative;
   transition: all 1s;
+  max-width: 1200px;
+  margin: auto;
 }
 .signature {
   font-family: 'Sacramento';
@@ -716,6 +765,7 @@ p {
 /* Navigation class*************************************************************** */
 .nav {
   width: 100%;
+  max-width: 1200px;
   position: fixed;
   top: 0;
   display: flex;
@@ -767,7 +817,7 @@ p {
   width: 30px;
   height: 30px;
   top: 0px;
-  left: 90%;
+  right: 20px;
   transition-duration: 0.5s;
 }
 .btn11 .icon-left {
@@ -862,6 +912,7 @@ p {
 
 .splide-offers {
   width: 100vw;
+  max-width: 1200px;
   height: 400px;
 }
 
@@ -1318,6 +1369,7 @@ header {
 /* Offers class************************************* */
 .offers {
   text-align: center;
+  max-width: 1200px;
 }
 .offers-title {
   color: #000000;

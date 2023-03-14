@@ -25,6 +25,9 @@ export default{
         return{
           offer:[{title:"Projektowanie i wykonanie instalacji elektrycznych ", text:"Przedstawimy opis całego procesu projektowania oraz wykonania instalacji, wraz z informacją o możliwych do zastoaowania materiałach i urządzeniach "}, {title:"Modernizacja istniejących instalacji elektrycznych", text:"Przedstawienie wszystkich możliwości modernizacji istniejących instalacji wraz z propozycja zasosowania nowych technologi i rozwiązań"}, {title:"Serwis i konserwacja instalacji elektrycznych", text:"Oferujemy usługi serwisowe i konserwacyjne, w tym przeglądy okresowe, naprawy awaryjne i inne"}, {title:"Systemy automatyki budynkowej", text:"W ofercie inteligentne sterowanie oświetleniem, ogrzewaniem, wentylacją i innymi urządzeniami"}, {title:"Montaż oświetlenia zewnętrznego i dekoracyjnego", text:"Montaż oświetlenia ogrodowego, kinkietów, lamp oraz innych urządzeń"}]  
         }
+    },
+    mounted(){
+        window.scrollTo(0, 0);
     }
 }
 </script>

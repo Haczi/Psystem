@@ -1,14 +1,18 @@
 <template>
   <div class="container">
     <div class="box-selection">
-      <div class="instalation-page">
-        <img src="./img/instalacjelogo.png" />
-        <router-link to="/instalation" class="start-page"><i class="fa-solid fa-circle-arrow-right"></i></router-link>
-      </div>
-      <div class="instalation-page">
-        <img src="./img/transportlogo.png" />
-        <router-link to="to" class="start-page"><i class="fa-solid fa-circle-arrow-right"></i></router-link>
-      </div>
+      <transition name="bounce">
+        <div v-if="showElement" class="instalation-page">
+          <img src="./img/instalacjelogo.png" />
+          <router-link to="/instalation" class="start-page"><i class="fa-solid fa-circle-arrow-right"></i></router-link>
+        </div>
+      </transition>
+      <transition name="bouncel">
+        <div v-if="showElement" class="instalation-page">
+          <img src="./img/transportlogo.png" />
+          <router-link to="to" class="start-page"><i class="fa-solid fa-circle-arrow-right"></i></router-link>
+        </div>
+      </transition>
     </div>
   </div>
   <!-- <div class="image-top">
@@ -17,6 +21,25 @@
       </video>
     </div> -->
 </template>
+<script>
+export default{
+  data(){
+    return{
+      showElement:false
+    }
+  },
+  methods:{
+    turnOnAnime(){
+      setTimeout(() => {
+  this.showElement=true
+}, "1000");
+    }
+  },
+  mounted() {
+    this.turnOnAnime()
+  },
+}
+</script>
 
 <style scoped>
 video {
@@ -60,5 +83,43 @@ img {
 svg{
   height:30px;
 
+}
+.bounce-enter-active {
+  animation: bounce-in 0.5s;
+}
+.bounce-leave-active {
+  animation: bounce-in 0.5s reverse;
+}
+@keyframes bounce-in {
+  0% {
+    transform: translateX(200%);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.25);
+  }
+  100% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+.bouncel-enter-active {
+  animation: bouncel-in 0.5s;
+}
+.bouncel-leave-active {
+  animation: bouncel-in 0.5s reverse;
+}
+@keyframes bouncel-in {
+  0% {
+    transform: translateX(-200%);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.25);
+  }
+  100% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
 }
 </style>
