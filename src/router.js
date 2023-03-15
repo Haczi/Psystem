@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router';
 
 import FirstPageInstalation from './pages/instalation/FirstPageInstalation.vue';
+import AlarmInstalation from './pages/instalation/AlarmInstalation'
 import ElectricInstalation from './pages/instalation/ElectricInstalation.vue';
 import MainPage from './components/layout/MainPage.vue';
 // import CoachRegistation from './pages/coaches/CoachRegistration.vue';
@@ -14,6 +15,7 @@ const router = createRouter({
     { path: '/psystem/',name:'MainPage', component: MainPage },
     { path: '/instalation', component: FirstPageInstalation },
     { path: '/oferta_instalacje', component: ElectricInstalation },
+    { path: '/oferta_alarmy', component: AlarmInstalation},
     // {
     //   path: '/coaches/:id',
     //   component: CoachDetail,

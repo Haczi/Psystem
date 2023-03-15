@@ -280,6 +280,14 @@
             </div>
           </SplideSlide>
           <SplideSlide>
+            <!-- <img  class="picture-slider" src="./img/circle.jpg" alt="Sample 2"/> -->
+            <div class="card-box">
+              <h4>Alarmy</h4>
+              <div class="offer-slider5" alt="Sample 1"></div>
+              <router-link to="/oferta_alarmy" class="offer-btn"><p>Oferta</p></router-link>
+            </div>
+          </SplideSlide>
+          <SplideSlide>
             <div class="card-box">
               <h4>Zabezpieczenia</h4>
               <div class="offer-slider2" alt="Sample 1"></div>
@@ -301,14 +309,6 @@
             </div>
           </SplideSlide>
 
-          <SplideSlide>
-            <!-- <img  class="picture-slider" src="./img/circle.jpg" alt="Sample 2"/> -->
-            <div class="card-box">
-              <h4>Alarmy</h4>
-              <div class="offer-slider5" alt="Sample 1"></div>
-              <div class="offer-btn"><p>Oferta</p></div>
-            </div>
-          </SplideSlide>
         </Splide>
         <Splide
           v-if="!numbersSlide"
@@ -326,6 +326,14 @@
             </div>
           </SplideSlide>
           <SplideSlide>
+            <!-- <img  class="picture-slider" src="./img/circle.jpg" alt="Sample 2"/> -->
+            <div class="card-box">
+              <h4>Alarmy</h4>
+              <div class="offer-slider5" alt="Sample 1"></div>
+              <router-link to="/oferta_alarmy" class="offer-btn"><p>Oferta</p></router-link>
+            </div>
+          </SplideSlide>
+          <SplideSlide>
             <div class="card-box">
               <h4>Zabezpieczenia</h4>
               <div class="offer-slider2" alt="Sample 1"></div>
@@ -343,15 +351,6 @@
             <div class="card-box">
               <h4>Satelity/TV</h4>
               <div class="offer-slider4" alt="Sample 1"></div>
-              <div class="offer-btn"><p>Oferta</p></div>
-            </div>
-          </SplideSlide>
-
-          <SplideSlide>
-            <!-- <img  class="picture-slider" src="./img/circle.jpg" alt="Sample 2"/> -->
-            <div class="card-box">
-              <h4>Alarmy</h4>
-              <div class="offer-slider5" alt="Sample 1"></div>
               <div class="offer-btn"><p>Oferta</p></div>
             </div>
           </SplideSlide>
@@ -683,7 +682,7 @@ export default {
     turnOffLoading() {
       setTimeout(() => {
         this.loading = false;
-      }, 2000);
+      }, 1000);
     },
     scrollTo() {
       this.$refs.home.scrollIntoView({ behavior: 'smooth' });
@@ -727,6 +726,7 @@ export default {
   transition: all 1s;
   max-width: 1200px;
   margin: auto;
+  align-self: center;
 }
 .signature {
   font-family: 'Sacramento';
@@ -776,11 +776,12 @@ p {
 .nav-menu {
   /*nav menu hidden for mobile*/
   display: flex;
+  max-width: 1200px;
   flex-direction: column;
   position: fixed;
   list-style: none;
   top: -350px;
-  left: 0;
+  /* left: 0; */
   align-items: start;
   margin: auto;
   margin-bottom: 30px;
@@ -789,6 +790,7 @@ p {
   height: 200px;
   background-color: #ffffff;
   z-index: 2;
+  margin: auto !important;
 }
 .nav-menu > li > p {
   padding: 0.5em;
@@ -1312,7 +1314,7 @@ header {
   text-shadow: 2px 2px 2px rgba(206, 89, 55, 0);
 }
 .line-1 {
-  overflow: hidden;
+  /* overflow: hidden; */
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
@@ -1333,7 +1335,7 @@ header {
   justify-content: space-around;
   width: 100%;
   margin-bottom: 1em;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 .text-circle {
   color: white;
