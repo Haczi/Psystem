@@ -4,9 +4,10 @@ import FirstPageInstalation from './pages/instalation/FirstPageInstalation.vue';
 import AlarmInstalation from './pages/instalation/AlarmInstalation'
 import ElectricInstalation from './pages/instalation/ElectricInstalation.vue';
 import MainPage from './components/layout/MainPage.vue';
+import FirstPageTransport from './pages/transport/FirstPageTransport'
 // import CoachRegistation from './pages/coaches/CoachRegistration.vue';
 // import ContactCoach from './pages/requests/ContactCoach.vue';
-import RequestsReceived from './pages/requests/RequestsReceived.vue';
+// import RequestsReceived from './pages/requests/RequestsReceived.vue';
 import NotFound from './pages/NotFound.vue';
 
 const router = createRouter({
@@ -16,6 +17,7 @@ const router = createRouter({
     { path: '/instalation', component: FirstPageInstalation },
     { path: '/oferta_instalacje', component: ElectricInstalation },
     { path: '/oferta_alarmy', component: AlarmInstalation},
+    { path: '/transport', component: FirstPageTransport},
     // {
     //   path: '/coaches/:id',
     //   component: CoachDetail,
@@ -24,7 +26,7 @@ const router = createRouter({
     //   ]
     // },
     // { path: '/register', component: CoachRegistation },
-    { path: '/requests', component: RequestsReceived },
+    // { path: '/requests', component: RequestsReceived },
     { path: '/:notFound(.*)', component: NotFound }
   ]
 });

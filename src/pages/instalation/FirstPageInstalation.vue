@@ -1,7 +1,7 @@
 <template>
   <div v-if="!loading" class="conteiner" @scroll="onScroll">
     <nav class="nav">
-      <div class="logo"></div>
+      <router-link to="/psystem/" class="logo"></router-link>
       <div @click="toogleMenu" class="btn11" :class="menuActive" data-menu="11">
         <div class="icon-left"></div>
         <div class="icon-right"></div>
@@ -13,6 +13,7 @@
       <li><p @click="scrollToProjects()" :class="linkActive">PROJEKTY</p></li>
       <li><p @click="scrollToContact()" :class="linkActive">KONTAKT</p></li>
       <li><p :class="linkActive">O NAS</p></li>
+      
     </ul>
     <header ref="home">
       <div
@@ -2148,6 +2149,7 @@ h3 {
 .text-focus-in4 {
   animation: text-focus-in 17s cubic-bezier(0.55, 0.285, 0.68, 0.53) forwards;
 }
+
 /* End Animation class****************************** */
 
 @media only screen and (min-width: 960px) {

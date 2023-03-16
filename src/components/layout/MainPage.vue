@@ -10,7 +10,7 @@
       <transition name="bouncel">
         <div v-if="showElement" class="instalation-page">
           <img src="./img/transportlogo.png" />
-          <router-link to="to" class="start-page"><i class="fa-solid fa-circle-arrow-right"></i></router-link>
+          <router-link to="/transport" class="start-page"><i class="fa-solid fa-circle-arrow-right"></i></router-link>
         </div>
       </transition>
     </div>
