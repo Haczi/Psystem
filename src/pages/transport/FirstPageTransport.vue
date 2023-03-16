@@ -2,7 +2,7 @@
   <div v-if="!loading" class="conteiner" @scroll="onScroll">
     <nav class="nav">
       <router-link to="/psystem/" class="logo"
-        ><img src="../../components/layout/img/transportlogo.png"
+        ><img src="./img/transportlogo.png"
       /></router-link>
       <div @click="toogleMenu" class="btn11" :class="menuActive" data-menu="11">
         <div class="icon-left"></div>
@@ -46,7 +46,7 @@
           v-on:timeupdate="showFirstTextAgain"
         >
           <source
-            src="../../components/layout/video/transport.mp4"
+            src="./video/transport.mp4"
             type="video/mp4"
           />
         </video>
