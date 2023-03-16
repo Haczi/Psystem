@@ -4,7 +4,7 @@ import FirstPageInstalation from './pages/instalation/FirstPageInstalation.vue';
 import AlarmInstalation from './pages/instalation/AlarmInstalation'
 import ElectricInstalation from './pages/instalation/ElectricInstalation.vue';
 import MainPage from './components/layout/MainPage.vue';
-import FirstPageTransport from './pages/transport/FirstPageTransport'
+import FirstPageTransport from './pages/instalation/FirstPageTransport'
 // import CoachRegistation from './pages/coaches/CoachRegistration.vue';
 // import ContactCoach from './pages/requests/ContactCoach.vue';
 // import RequestsReceived from './pages/requests/RequestsReceived.vue';

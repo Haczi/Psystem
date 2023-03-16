@@ -46,7 +46,7 @@
           v-on:timeupdate="showFirstTextAgain"
         >
           <source
-            src="/transport.mp4"
+            src="./img/transport.mp4"
             type="video/mp4"
           />
         </video>
